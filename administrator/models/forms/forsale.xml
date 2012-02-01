@@ -121,8 +121,8 @@
            name="address"
            type="text"
            class="inputbox"
-           label="COM_FORSALES_FIELD_USE_ADDRESS_LABEL"
-           description="COM_FORSALES_FIELD_USE_ADDRESS_DESC"
+           label="COM_FORSALES_FIELD_ADDRESS_LABEL"
+           description="COM_FORSALES_FIELD_ADDRESS_DESC"
 			/>
 		
 		<field
