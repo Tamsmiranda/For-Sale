@@ -382,6 +382,13 @@
                 label="COM_FORSALES_FIELD_IMAGE8_LABEL"
                 description="COM_FORSALES_FIELD_IMAGE8_DESC"
                 />
+			<field
+                name="imagefeatured"
+                type="media"
+                hide_none="1"
+                label="COM_FORSALES_FIELD_IMAGEFEATURED_LABEL"
+                description="COM_FORSALES_FIELD_IMAGEFEATURED_DESC"
+                />
 			<!-- End Images -->
 		</fieldset>
 <!--
