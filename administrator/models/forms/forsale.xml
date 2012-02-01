@@ -53,7 +53,70 @@
            description="COM_FORSALES_FIELD_FULLTEXT_DESC"
            filter="ContactsHelper::filterText"
            buttons="true" />
+		 
+		<field
+           name="price"
+           type="float"
+           class="inputbox"
+           label="COM_FORSALES_FIELD_PRICE_LABEL"
+           description="COM_FORSALES_FIELD_PRICE_DESC"
+           filter="ContactsHelper::filterText"
+           buttons="true" />
+		   
+		<field
+           name="bedrooms"
+           type="integer"
+           class="inputbox"
+           label="COM_FORSALES_FIELD_BEDROOMS_LABEL"
+           description="COM_FORSALES_FIELD_BEDROOMS_DESC"
+           filter="ContactsHelper::filterText"
+           buttons="true" />
 
+		<field
+           name="bathrooms"
+           type="integer"
+           class="inputbox"
+           label="COM_FORSALES_FIELD_BATHROOMS_LABEL"
+           description="COM_FORSALES_FIELD_BATHROOMS_DESC"
+           filter="ContactsHelper::filterText"
+           buttons="true" />
+
+		<field
+           name="garages"
+           type="integer"
+           class="inputbox"
+           label="COM_FORSALES_FIELD_GARAGES_LABEL"
+           description="COM_FORSALES_FIELD_GARAGES_DESC"
+           filter="ContactsHelper::filterText"
+           buttons="true" />
+		   
+		<field
+           name="square_footage"
+           type="integer"
+           class="inputbox"
+           label="COM_FORSALES_FIELD_SQUARE_FOOTAGE_LABEL"
+           description="COM_FORSALES_FIELD_SQUARE_FOOTAGE_DESC"
+           filter="ContactsHelper::filterText"
+           buttons="true" />
+		   
+		<field
+           name="use_google_maps"
+           type="boolean"
+           class="radiobutton"
+           label="COM_FORSALES_FIELD_USE_GOOGLE_MAPS_LABEL"
+           description="COM_FORSALES_FIELD_USE_GOOGLE_MAPS_DESC"
+           filter="ContactsHelper::filterText"
+           buttons="true" />
+		   
+		<field
+           name="address"
+           type="text"
+           class="inputbox"
+           label="COM_FORSALES_FIELD_USE_ADDRESS_LABEL"
+           description="COM_FORSALES_FIELD_USE_ADDRESS_DESC"
+           filter="ContactsHelper::filterText"
+           buttons="true" />
+		   
        <field name="asset_id" type="hidden" filter="unset" />
 
        <field

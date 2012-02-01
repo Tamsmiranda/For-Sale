@@ -51,6 +51,34 @@ JHtml::_('behavior.keepalive');
 			<?php echo $this->form->getLabel('fulltext'); ?>
 			<div class="clr"></div>
 			<?php echo $this->form->getInput('fulltext'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getLabel('price'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getInput('price'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getLabel('bedrooms'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getInput('bedrooms'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getLabel('bathrooms'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getInput('bathrooms'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getLabel('garages'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getInput('garages'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getLabel('square_footage'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getInput('square_footage'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getLabel('use_google_maps'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getInput('use_google_maps'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getLabel('address'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getInput('address'); ?>
 		</fieldset>
 	</div>
 
