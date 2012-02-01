@@ -1,2 +1,3 @@
 # translate labels
 COM_FORSALES_IMAGES = Images
+COM_FORSALES_FIELD_IMAGE3_LABEL .. 8

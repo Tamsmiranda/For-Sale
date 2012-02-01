@@ -320,7 +320,71 @@
 		</fieldset>
 	</fields>
     <fields name="custom_fields">
-
+	
+		<fieldset
+			name="images"
+			label="COM_FORSALES_CUSTOM_IMAGES"
+			>
+			<!-- Images -->
+			<field
+                name="image1"
+                type="media"
+                hide_none="1"
+                label="COM_FORSALES_FIELD_IMAGE1_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE1_DESC"
+                />
+			<field
+                name="image2"
+                type="media"
+                hide_none="1"
+                label="COM_FORSALES_FIELD_IMAGE2_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE2_DESC"
+                />
+			<field
+                name="image3"
+                type="media"
+                hide_none="1"
+                label="COM_FORSALES_FIELD_IMAGE3_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE3_DESC"
+                />
+			<field
+                name="image4"
+                type="media"
+                hide_none="1"
+                label="COM_FORSALES_FIELD_IMAGE4_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE4_DESC"
+                />
+			<field
+                name="image5"
+                type="media"
+                hide_none="1"
+                label="COM_FORSALES_FIELD_IMAGE5_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE5_DESC"
+                />
+			<field
+                name="image6"
+                type="media"
+                hide_none="1"
+                label="COM_FORSALES_FIELD_IMAGE6_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE6_DESC"
+                />
+			<field
+                name="image7"
+                type="media"
+                hide_none="1"
+                label="COM_FORSALES_FIELD_IMAGE7_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE7_DESC"
+                />
+			<field
+                name="image8"
+                type="media"
+                hide_none="1"
+                label="COM_FORSALES_FIELD_IMAGE8_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE8_DESC"
+                />
+			<!-- End Images -->
+		</fieldset>
+<!--
         <fieldset
             name="jfields"
             label="COM_FORSALES_CUSTOM_FIELDS"
@@ -333,14 +397,7 @@
 			    type="spacer"
 			    />
 
-            <field
-                name="image1"
-                type="media"
-                hide_none="1"
-                label="COM_FORSALES_FIELD_IMAGE1_LABEL"
-                description="COM_FORSALES_FIELD_IMAGE1_DESC"
-                />
-
+            
             <field
                 name="image1_caption"
                 type="text"
@@ -383,9 +440,17 @@
                 class="inputbox"
                 size="30"
             />
+			<field
+                name="link2_text"
+                type="text"
+                label="COM_FORSALES_FIELD_LINK2_NAME_LABEL"
+                description="COM_FORSALES_FIELD_LINK2_NAME_DESC"
+                class="inputbox"
+                size="30"
+            />
 
 
-        </fieldset>
+        </fieldset>-->
 	</fields>
 
     <fields name="parameters">
