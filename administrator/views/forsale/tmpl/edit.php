@@ -79,6 +79,10 @@ JHtml::_('behavior.keepalive');
 			<?php echo $this->form->getLabel('address'); ?>
 			<div class="clr"></div>
 			<?php echo $this->form->getInput('address'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getLabel('featured'); ?>
+			<div class="clr"></div>
+			<?php echo $this->form->getInput('featured'); ?>
 		</fieldset>
 	</div>
 

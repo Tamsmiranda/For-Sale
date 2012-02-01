@@ -123,8 +123,15 @@
            class="inputbox"
            label="COM_FORSALES_FIELD_USE_ADDRESS_LABEL"
            description="COM_FORSALES_FIELD_USE_ADDRESS_DESC"
-           filter="ContactsHelper::filterText"
-           buttons="true" />
+			/>
+		
+		<field
+           name="featured"
+           type="checkbox"
+           class="radiobutton"
+           label="COM_FORSALES_FIELD_FEATURED_LABEL"
+           description="COM_FORSALES_FIELD_FEATURED_DESC"
+           default="0" />
 		   
        <field name="asset_id" type="hidden" filter="unset" />
 
