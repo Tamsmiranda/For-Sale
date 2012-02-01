@@ -69,8 +69,11 @@
            class="inputbox"
            label="COM_FORSALES_FIELD_BEDROOMS_LABEL"
            description="COM_FORSALES_FIELD_BEDROOMS_DESC"
-           filter="ContactsHelper::filterText"
-           buttons="true" />
+		   default="1"
+           first="0"
+		   last="20"
+		   step="1"
+		   />
 
 		<field
            name="bathrooms"
@@ -78,8 +81,11 @@
            class="inputbox"
            label="COM_FORSALES_FIELD_BATHROOMS_LABEL"
            description="COM_FORSALES_FIELD_BATHROOMS_DESC"
-           filter="ContactsHelper::filterText"
-           buttons="true" />
+           default="1"
+           first="0"
+		   last="20"
+		   step="1"
+		   />
 
 		<field
            name="garages"
@@ -87,12 +93,15 @@
            class="inputbox"
            label="COM_FORSALES_FIELD_GARAGES_LABEL"
            description="COM_FORSALES_FIELD_GARAGES_DESC"
-           filter="ContactsHelper::filterText"
-           buttons="true" />
+           default="1"
+           first="0"
+		   last="20"
+		   step="1"
+		   />
 		   
 		<field
            name="square_footage"
-           type="integer"
+           type="text"
            class="inputbox"
            label="COM_FORSALES_FIELD_SQUARE_FOOTAGE_LABEL"
            description="COM_FORSALES_FIELD_SQUARE_FOOTAGE_DESC"
@@ -101,12 +110,12 @@
 		   
 		<field
            name="use_google_maps"
-           type="boolean"
+           type="checkbox"
            class="radiobutton"
            label="COM_FORSALES_FIELD_USE_GOOGLE_MAPS_LABEL"
            description="COM_FORSALES_FIELD_USE_GOOGLE_MAPS_DESC"
            filter="ContactsHelper::filterText"
-           buttons="true" />
+           default="0" />
 		   
 		<field
            name="address"
