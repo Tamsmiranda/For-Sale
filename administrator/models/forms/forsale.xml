@@ -246,7 +246,79 @@
 			cols="30" rows="2" />
 
 	</fields>
+	<fields name="images">
+		<fieldset
+            name="jfields"
+            label="COM_FORSALES_IMAGES"
+            >
+			<!-- Image 1 -->
+			<field
+			    name="imagespacer"
+                label="COM_FORSALES_IMAGE_LABEL"
+			    description="COM_FORSALES_IMAGE_DESC"
+			    type="spacer"
+			    />
 
+            <field
+                name="image1"
+                type="media"
+                hide_none="1"
+                label="COM_FORSALES_FIELD_IMAGE1_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE1_DESC"
+                />
+
+            <field
+                name="image1_caption"
+                type="text"
+                label="COM_FORSALES_FIELD_IMAGE1_CAPTION_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE1_CAPTION_DESC"
+                class="inputbox"
+                size="30"
+                />
+
+            <field
+                name="image1_credit"
+                type="text"
+                label="COM_FORSALES_FIELD_IMAGE1_CREDIT_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE1_CREDIT_DESC"
+                class="inputbox"
+                size="30"
+                />
+			<!-- Image 2 -->
+			<field
+			    name="imagespacer"
+                label="COM_FORSALES_IMAGE_LABEL"
+			    description="COM_FORSALES_IMAGE_DESC"
+			    type="spacer"
+			    />
+
+            <field
+                name="image2"
+                type="media"
+                hide_none="1"
+                label="COM_FORSALES_FIELD_IMAGE2_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE2_DESC"
+                />
+
+            <field
+                name="image2_caption"
+                type="text"
+                label="COM_FORSALES_FIELD_IMAGE2_CAPTION_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE2_CAPTION_DESC"
+                class="inputbox"
+                size="30"
+                />
+
+            <field
+                name="image2_credit"
+                type="text"
+                label="COM_FORSALES_FIELD_IMAGE2_CREDIT_LABEL"
+                description="COM_FORSALES_FIELD_IMAGE2_CREDIT_DESC"
+                class="inputbox"
+                size="30"
+                />
+		</fieldset>
+	</fields>
     <fields name="custom_fields">
 
         <fieldset

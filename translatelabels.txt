@@ -1,0 +1,2 @@
+# translate labels
+COM_FORSALES_IMAGES = Images
