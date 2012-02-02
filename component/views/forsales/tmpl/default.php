@@ -31,7 +31,9 @@ foreach ($this->items as $item) :
     <div class="list<?php echo $this->pageclass_sfx;?>">
 
         <h1>
-            <?php echo $this->escape($item->title); ?>
+			<a href="<?php echo JRoute::_( 'index.php?option=com_forsales&view=forsale&id='.$item->id );?>">
+				<?php echo $this->escape($item->title); ?>
+			</a>
         </h1>
 
         <?php if ($item->subtitle == '') :
