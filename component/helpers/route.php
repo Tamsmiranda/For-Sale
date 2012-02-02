@@ -104,6 +104,58 @@ abstract class JFoobarsHelperRoute
 
 		return $link;
 	}
+	
+	public static function getItemRoute($id)
+	{
+		/*if ($catid instanceof CategoryNode)
+		{
+			$id = $catid->id;
+			$category = $catid;
+		}
+		else
+		{
+			$id = (int) $catid;
+			$category = Categories::getInstance('JFoobars')->get($id);
+		}*/
+
+		if($id < 1)
+		{
+			$link = '';
+		}
+		else
+		{
+			/*$needles = array(
+				'category' => array($id)
+			);*/
+
+			if ($item = self::_findItem(/*$needles*/))
+			{
+				$link = 'index.php?Itemid='.$item;
+			}
+			else
+			{
+				//Create the link
+				//index.php?option=com_forsales&view=forsale&id=2
+				$link = 'index.php?option=com_forsales&view=forsale&id='.$id;
+				if($category)
+				{
+					$catids = array_reverse($category->getPath());
+					$needles = array(
+						'category' => $catids,
+						'categories' => $catids
+					);
+					if ($item = self::_findItem($needles)) {
+						$link .= '&Itemid='.$item;
+					}
+					elseif ($item = self::_findItem()) {
+						$link .= '&Itemid='.$item;
+					}
+				}
+			}
+		}
+
+		return $link;
+	}
 
 	public static function getFormRoute($id)
 	{
