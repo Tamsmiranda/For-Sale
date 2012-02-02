@@ -108,14 +108,14 @@
            filter="ContactsHelper::filterText"
            buttons="true" />
 		   
-		<field
-           name="use_google_maps"
-           type="checkbox"
-           class="radiobutton"
-           label="COM_FORSALES_FIELD_USE_GOOGLE_MAPS_LABEL"
-           description="COM_FORSALES_FIELD_USE_GOOGLE_MAPS_DESC"
-           filter="ContactsHelper::filterText"
-           default="0" />
+		<field name="use_google_maps"
+			type="radio"
+			default="0"
+			label="COM_FORSALES_FIELD_USE_GOOGLE_MAPS_LABEL"
+			description="COM_FORSALES_FIELD_USE_GOOGLE_MAPS_DESC">
+			<option value="0">JFALSE</option>
+			<option value="1">JTRUE</option>
+		</field>
 		   
 		<field
            name="address"
@@ -125,13 +125,14 @@
            description="COM_FORSALES_FIELD_ADDRESS_DESC"
 			/>
 		
-		<field
-           name="featured"
-           type="checkbox"
-           class="radiobutton"
-           label="COM_FORSALES_FIELD_FEATURED_LABEL"
-           description="COM_FORSALES_FIELD_FEATURED_DESC"
-           default="0" />
+		<field name="is_featured"
+			type="radio"
+			default="0"
+			label="COM_FORSALES_FIELD_FEATURED_LABEL"
+			description="COM_FORSALES_FIELD_FEATURED_DESC">
+			<option value="0">JFALSE</option>
+			<option value="1">JTRUE</option>
+		</field>
 		   
        <field name="asset_id" type="hidden" filter="unset" />
 

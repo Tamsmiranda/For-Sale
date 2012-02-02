@@ -74,8 +74,8 @@ JHtml::_('behavior.keepalive');
 				<li><?php echo $this->form->getLabel('address'); ?>
 				<?php echo $this->form->getInput('address'); ?></li>
 				
-				<li><?php echo $this->form->getLabel('featured'); ?>
-				<?php echo $this->form->getInput('featured'); ?></li>
+				<li><?php echo $this->form->getLabel('is_featured'); ?>
+				<?php echo $this->form->getInput('is_featured'); ?></li>
 			</ul>
 		</fieldset>
 	</div>
