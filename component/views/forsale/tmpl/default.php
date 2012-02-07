@@ -287,45 +287,77 @@ $custom_fields = json_decode($this->item->custom_fields);
 
 <div class="gallery gallery6 gallery-fade">
 			<ul class="thumbs">
-				<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg"><span>&nbsp;</span></a></li>
-				<li><a href="javascript:;" class="active"><img height="89" width="120" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img2.jpg"><span>&nbsp;</span></a></li>
-				<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img3.jpg"><span>&nbsp;</span></a></li>
-				<li><a href="javascript:;" class=""><img height="90" width="120" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img4.jpg"><span>&nbsp;</span></a></li>
+				<?php if ($custom_fields->image1): ?>
+					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image1;?>"><span>&nbsp;</span></a></li>
+				<?php endif;?>
+				<?php if ($custom_fields->image2): ?>
+					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image2;?>"><span>&nbsp;</span></a></li>
+				<?php endif;?>
+				<?php if ($custom_fields->image3): ?>
+					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image3;?>"><span>&nbsp;</span></a></li>
+				<?php endif;?>
+				<?php if ($custom_fields->image4): ?>
+					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image4;?>"><span>&nbsp;</span></a></li>
+				<?php endif;?>
 			</ul>
 			<div class="holder">
 				<ul>
-					<li style="visibility: hidden; opacity: 0;">
-						<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
-						<div class="title">Image description 1</div>
-					</li>
+					<?php if ($custom_fields->image1): ?>
 					<li style="visibility: visible; opacity: 1;">
-						<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img2.jpg">
-						<div class="title">Image description 2</div>
+						<img src="<?php echo $custom_fields->image1; ?>">
+						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
+						<div class="title">Image description 1</div>-->
 					</li>
+					<?php endif; ?>
+					<?php if ($custom_fields->image2): ?>
 					<li style="visibility: hidden; opacity: 0;">
-						<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img3.jpg">
-						<div class="title">Image description 3</div>
+						<img src="<?php echo $custom_fields->image2; ?>">
+						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
+						<div class="title">Image description 1</div>-->
 					</li>
+					<?php endif; ?>
+					<?php if ($custom_fields->image3): ?>
 					<li style="visibility: hidden; opacity: 0;">
-						<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img4.jpg">
-						<div class="title">Image description 4</div>
+						<img src="<?php echo $custom_fields->image3; ?>">
+						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
+						<div class="title">Image description 1</div>-->
 					</li>
+					<?php endif; ?>
+					<?php if ($custom_fields->image4): ?>
 					<li style="visibility: hidden; opacity: 0;">
-						<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img5.jpg">
-						<div class="title">Image description 5</div>
+						<img src="<?php echo $custom_fields->image4; ?>">
+						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
+						<div class="title">Image description 1</div>-->
 					</li>
+					<?php endif; ?>
+					<?php if ($custom_fields->image5): ?>
 					<li style="visibility: hidden; opacity: 0;">
-						<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img6.jpg">
-						<div class="title">Image description 6</div>
+						<img src="<?php echo $custom_fields->image5; ?>">
+						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
+						<div class="title">Image description 1</div>-->
 					</li>
+					<?php endif; ?>
+					<?php if ($custom_fields->image6): ?>
 					<li style="visibility: hidden; opacity: 0;">
-						<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img7.jpg">
-						<div class="title">Image description 7</div>
+						<img src="<?php echo $custom_fields->image6; ?>">
+						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
+						<div class="title">Image description 1</div>-->
 					</li>
+					<?php endif; ?>
+					<?php if ($custom_fields->image7): ?>
 					<li style="visibility: hidden; opacity: 0;">
-						<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img8.jpg">
-						<div class="title">Image description 8</div>
+						<img src="<?php echo $custom_fields->image7; ?>">
+						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
+						<div class="title">Image description 1</div>-->
 					</li>
+					<?php endif; ?>
+					<?php if ($custom_fields->image8): ?>
+					<li style="visibility: hidden; opacity: 0;">
+						<img src="<?php echo $custom_fields->image8; ?>">
+						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
+						<div class="title">Image description 1</div>-->
+					</li>
+					<?php endif; ?>
 				</ul>
 				<div class="control" style="top: -40px;">
 					<a class="start" href="#">play</a>
@@ -335,10 +367,18 @@ $custom_fields = json_decode($this->item->custom_fields);
 				<a class="next" href="#" style="right: -50px;">next</a>
 			</div>
 			<ul class="thumbs">
-				<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img5.jpg"><span>&nbsp;</span></a></li>
-				<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img6.jpg"><span>&nbsp;</span></a></li>
-				<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img7.jpg"><span>&nbsp;</span></a></li>
-				<li><a href="javascript:;" class=""><img height="90" width="120" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img8.jpg"><span>&nbsp;</span></a></li>
+				<?php if ($custom_fields->image5): ?>
+					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image5;?>"><span>&nbsp;</span></a></li>
+				<?php endif;?>
+				<?php if ($custom_fields->image6): ?>
+					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image6;?>"><span>&nbsp;</span></a></li>
+				<?php endif;?>
+				<?php if ($custom_fields->image7): ?>
+					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image7;?>"><span>&nbsp;</span></a></li>
+				<?php endif;?>
+				<?php if ($custom_fields->image8): ?>
+					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image8;?>"><span>&nbsp;</span></a></li>
+				<?php endif;?>
 			</ul>
 		</div>	
 	
@@ -382,5 +422,8 @@ gallery6.holder.addEvent("mouseleave", function() {
     </span>
 
     <?php echo $this->item->text; ?>
+	<pre><?php print_r($this->item);?></pre>
+	<pre><?php print_r($this->item->custom_fields);?></pre>
+	<pre><?php echo $this->params->get('image1');?></pre>
 
 </div>
