@@ -15,6 +15,7 @@ defined('_JEXEC') or die;
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 
 $custom_fields = json_decode($this->item->custom_fields);
+// Array de Imagens
 $images = array(
 	$custom_fields->image1,
 	$custom_fields->image2,
@@ -24,6 +25,10 @@ $images = array(
 	$custom_fields->image6,
 	$custom_fields->image7,
 	$custom_fields->image8);
+
+// Url do TimThumb
+$base = juri::base();
+$timthumb = $base . JRoute::_('components/com_forsales/libraries/timthumb/timthumb.php', false);
 
 /** uncomment out to determine column names */
 //echo '<pre>';var_dump($this->item);'</pre>';
@@ -38,7 +43,7 @@ $images = array(
 ?>
 <div class="list<?php echo $this->pageclass_sfx;?>">
 	<?php if ($custom_fields->image1) : ?>
-	<a href="<?php echo $custom_fields->image1;?>" rel="prettyPhoto" title=""><img src="<?php echo $custom_fields->image1;?>" width="60" height="60" alt="" /></a>
+	<a href="<?php echo $custom_fields->image1;?>" rel="prettyPhoto" title=""><img src="<?php echo $timthumb."?src=".$base.$custom_fields->image1."&w=60&h=60&zc=1";?>" width="60" height="60" alt="" /></a>
 	<?php endif; ?>
 	<div id="product-slider">
       <div id="product-slides">
@@ -46,7 +51,7 @@ $images = array(
             <div class="item-slide">
 				<?php if ($image) : ?>
                <a href="<?php echo $image;?>" rel="prettyPhoto[gallery]" title="<?php echo $this->escape($this->item->title); ?>">
-                  <img src="<?php echo $image; ?>" alt="" />
+				  <img src="<?php echo $timthumb."?src=".$base.$image."&w=293&h=293&zc=1";?>" alt="" />
                   <span class="overlay"></span>
                </a>
 			   <?php endif; ?>
@@ -76,10 +81,12 @@ $images = array(
          <div id="smallthumbs">
 			<?php $ind = 1; ?>
 			<?php foreach ($images as $image) : ?>
+				<?php if ($image) : ?>
                 <a href="#" class="small-controller active" rel="<?php echo $ind; ?>">
-                  <img src="<?php echo $image;?>" alt="" />
+                  <img src="<?php echo $timthumb."?src=".$base.$image."&w=49&h=49&zc=1";?>" alt="" />
                   <span class="overlay"></span>
                </a>
+			   <?php endif; ?>
 			    <?php $ind+= 1;?>
 			 <?php endforeach; ?>
             </div>
