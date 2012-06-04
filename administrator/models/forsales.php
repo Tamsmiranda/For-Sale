@@ -41,6 +41,7 @@ class ForsalesModelForsales extends JModelList
 				'ordering', 'a.ordering',
 				'publish_up', 'a.publish_up',
 				'publish_down', 'a.publish_down',
+				'address', 'a.address',
 			);
 		}
 

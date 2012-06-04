@@ -71,6 +71,9 @@ JHtml::_('behavior.keepalive');
 				<li><?php echo $this->form->getLabel('use_google_maps'); ?>
 				<?php echo $this->form->getInput('use_google_maps'); ?></li>
 				
+				<li><?php echo $this->form->getLabel('location'); ?>
+				<?php echo $this->form->getInput('location'); ?></li>
+				
 				<li><?php echo $this->form->getLabel('address'); ?>
 				<?php echo $this->form->getInput('address'); ?></li>
 				

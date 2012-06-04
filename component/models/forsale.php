@@ -156,12 +156,7 @@ class ForsalesModelForsale extends JModelItem
         $query->select(
             $this->getState(
                 'list.select',
-                'a.id, a.title, a.alias, a.subtitle, ' .
-                'a.snippet, a.fulltext, ' .
-                'a.checked_out, a.checked_out_time, ' .
-                'a.access, a.asset_id, a.version, a.language, a.ordering, ' .
-                'a.metakey, a.metadesc, a.metadata, ' .
-                'a.parameters, a.custom_fields'
+                'a.*'
             )
         );
         $query->from('#__forsales AS a');

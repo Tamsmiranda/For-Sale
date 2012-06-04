@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * @version     1.0.0
  * @package     com_forsales
@@ -27,403 +27,272 @@ $custom_fields = json_decode($this->item->custom_fields);
 /** uncomment out to display a specific custom field */
 //echo $custom_fields->image1;
 ?>
-<style type="text/css">
-.gallery {
-	margin: 0 0 20px;
-	width: 964px;
-	position: relative;
-	overflow: hidden;
-}
-.gallery .holder {
-	width: 100%;
-	position: relative;
-	overflow: hidden;
-	z-index: 2;
-}
-.gallery .holder ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	width: 30000px;
-}
-.gallery .holder ul li {
-	float: left;
-	width: 240px;
-	padding: 0 1px 1px 0;
-}
-.gallery .holder ul li img { display: block; }
-/* vertical mode */
-.gallery-vert { width: 240px; }
-.gallery-vert .holder { height: 362px; }
-.gallery-vert .holder ul { width: auto; }
-.gallery-vert .holder ul li { float: none; }
-.gallery-vert .holder ul li img {
-	vertical-align: top;
-	display: inline;
-}
-/* one item */
-.gallery-one,
-.gallery-vert-one { width: 240px; }
-.gallery-vert-one .holder { height: 180px; }
-.gallery-vert-one .holder ul { width: auto; }
-.gallery-vert-one .holder ul li { float: none; }
-.gallery-vert-one .holder ul li img {
-	vertical-align: top;
-	display: inline;
-}
-/* fade */
-.gallery-fade { width: 240px; }
-.gallery-fade .holder ul {
-	width: 100%;
-	height: 180px;
-}
-.gallery-fade .holder ul li {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 180px;
-	padding: 0;
-}
-/* gallery6 */
-.gallery6 { width: 740px; }
-.gallery6 .thumbs {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	float: left;
-	width: 120px;
-}
-.gallery6 ul.thumbs {
-	margin: 0 !important; 
-	padding: 0 !important;
-}
-.gallery6 .thumbs li {
-	padding: 0 0 1px;
-	list-style: none outside none;
-	padding: 0;
-}
-.gallery6 .thumbs li a {
-	position: relative;
-	overflow: hidden;
-	display: block;
-	width: 100%;
-}
-.gallery6 .thumbs li span {
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: url(../images/fader.png);
-	width: 100%;
-	height: 90px;
-	text-indent: -9999px;
-	cursor: pointer;
-}
-.gallery6 .thumbs li .active span,
-.gallery6 .thumbs li a:hover span { background: none; }
-.gallery6 .thumbs img { vertical-align: top; }
-.gallery6 .holder {
-	float: left;
-	width: 440px;
-	margin: 0 10px;
-	display: inline;
-}
-.gallery6 .holder ul {
-	width: 100%;
-	height: 360px;
-}
-.gallery6 .holder ul li { height: 360px; }
-.gallery6 .control {
-	position: absolute;
-	top: -40px;
-	left: 0;
-	background-color: #fff;
-	padding: 5px;
-	width: 70px;
-}
-.gallery6 .prev { left: -50px; }
-.gallery6 .next { right: -50px; }
-.gallery6 .title {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	background-color: #000;
-	color: #fff;
-	padding: 10px;
-	width: 460px;
-}
-.paging {
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin: 0;
-	padding: 0;
-	z-index: 100;
-}
-.paging ul {
-	margin: 0;
-	padding: 0;
-}
-.paging li {
-	padding: 0 10px 0 0;
-	float: left;
-	list-style: none;
-}
-.paging li a {
-	width: 14px;
-	height: 14px;
-	display: block;
-	background-color: red;
-	text-align: center;
-	text-decoration: none;
-	color: #fff;
-}
-.paging li a.active {
-	background-color: yellow;
-	color: red;
-}
-.next,
-.prev {
-	position: absolute;
-	right: 10px;
-	top: 50%;
-	margin-top: -30px;
-	width: 40px;
-	height: 40px;
-	background: url(../images/btn-next.png) no-repeat;
-	z-index: 20;
-	overflow: hidden;
-	text-indent: -9999px;
-	outline: none;
-	cursor: pointer;
-}
-.next-disable { background: url(../images/btn-next-disable.png) no-repeat; }
-.prev {
-	background: url(../images/btn-prev.png) no-repeat;
-	right: auto;
-	left: 10px;
-}
-.prev-disable { background: url(../images/btn-prev-disable.png) no-repeat; }
-.stop,
-.start {
-	background: url(../images/btn-pause.png) no-repeat;
-	overflow: hidden;
-	text-indent: -9999px;
-	width: 30px;
-	height: 30px;
-	float: left;
-	margin: 0 0 0 10px;
-	outline: none;
-	cursor: pointer;
-}
-.stopped .start { background: url(../images/btn-play.png) no-repeat; }
-.start,
-.no-active .start {
-	margin: 0;
-	background: url(../images/btn-play-disable.png) no-repeat;
-}
-.stopped .stop { background: url(../images/btn-pause-disable.png) no-repeat; }
-.control {
-	font-size: 18px;
-	line-height: 21px;
-	padding: 5px 0 0;
-}
-.nav {
-	position: fixed;
-	top: 150px;
-	left: 0;
-	padding-left: 10px;
-	z-index: 100;
-	border-right: 1px solid #ddd;
-	width: 115px;
-	background: #f4f5f5;
-}
-.nav strong {
-	font-size: 14px;
-	line-height: 17px;
-	color: #686c70;
-}
-.nav ul {
-	margin: 0;
-	padding: 14px 0 0;
-	list-style: none;
-}
-.nav ul li { padding: 0 0 5px; }
-#footer {
-	text-align: center;
-	background: #f9f9f9;
-	border-top: 1px solid #ddd;
-	width: 100%;
-}
-#footer .hold {
-	padding: 15px 0;
-	width: 974px;
-	margin: 0 auto;
-}
-#footer p {
-	margin: 0;
-	color: #888;
-	font-size: 11px;
-	line-height: 14px;
-}
-</style>
 
 <div class="list<?php echo $this->pageclass_sfx;?>">
+	<a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image002.jpg" rel="prettyPhoto" title="This is the description"><img src="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image002.jpg" width="60" height="60" alt="This is the title" /></a>
+	<div id="product-slider">
+      <div id="product-slides">
+                     <div class="item-slide">
+               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image002.jpg" rel="prettyPhoto[gallery]" title="360 º On The Park">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image002.jpg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+            </div> <!-- .item-slide -->
+                     <div class="item-slide">
+               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image008.jpg" rel="prettyPhoto[gallery]" title="360 º On The Park">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image008.jpg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+            </div> <!-- .item-slide -->
+                     <div class="item-slide">
+               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-1.jpeg" rel="prettyPhoto[gallery]" title="360 º On The Park">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-1.jpeg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+            </div> <!-- .item-slide -->
+                     <div class="item-slide">
+               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown.jpeg" rel="prettyPhoto[gallery]" title="360 º On The Park">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown.jpeg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+            </div> <!-- .item-slide -->
+                     <div class="item-slide">
+               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-2.jpeg" rel="prettyPhoto[gallery]" title="360 º On The Park">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-2.jpeg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+            </div> <!-- .item-slide -->
+                     <div class="item-slide">
+               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-2.jpeg" rel="prettyPhoto[gallery]" title="360 º On The Park">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-2.jpeg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+            </div> <!-- .item-slide -->
+                     <div class="item-slide">
+               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-3.jpeg" rel="prettyPhoto[gallery]" title="360 º On The Park">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-3.jpeg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+            </div> <!-- .item-slide -->
+                     <div class="item-slide">
+               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-4.jpeg" rel="prettyPhoto[gallery]" title="360 º On The Park">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-4.jpeg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+            </div> <!-- .item-slide -->
+               </div> <!-- #product-slides -->
+         </div> <!-- #product-slider -->
+		 <!-- Product descrption -->
+		 <div class="product-info">
+				<h3>
+					<?php echo $this->escape($this->item->title); ?>
+				</h3>
+				<?php if ($this->item->subtitle == '') :
+				else : ?>
+				<h2>
+					<?php echo $this->escape($this->item->subtitle); ?>
+				</h2>
+				<?php endif; ?>
+			   <div class="product-types clearfix">
+											 </div> <!-- .product-types -->
+			   <div class="description">
+					<?php echo $this->escape($this->item->snippet); ?>
+			   </div> <!-- .description -->
+		</div>
+		    <div id="product-thumbs" class="clearfix">
+      <div id="product-thumb-items">
+         <div id="smallthumbs">
+                           <a href="#" class="small-controller active" rel="1">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image002.jpg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+                           <a href="#" class="small-controller" rel="2">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image008.jpg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+                           <a href="#" class="small-controller" rel="3">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-1.jpeg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+                           <a href="#" class="small-controller" rel="5">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-2.jpeg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+                           <a href="#" class="small-controller" rel="6">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-2.jpeg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+                           <a href="#" class="small-controller" rel="7">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-3.jpeg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+                           <a href="#" class="small-controller last" rel="8">
+                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-4.jpeg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
+                  <span class="overlay"></span>
+               </a>
+                     </div>
+         <a href="#" id="left-arrow">Anterior</a>
+         <a href="#" id="right-arrow">Próximo</a>
+      </div> <!-- #product-thumb-items -->
+   </div> <!-- #product-thumbs -->
+    <!--<span>
+        <img src="<?php //echo $custom_fields->image1; ?>">
+    </span>-->
+	<div class="full-text">
+		<?php echo $this->item->fulltext; ?>
+	</div>
+	<?php if($this->item->use_google_maps) : ?>
+	   <div id="gmaps-border">
+		  <div id="gmaps-container" class="span-7" style="position: relative; background-color: rgb(229, 227, 223); overflow: hidden;height:400px;width:534px;"></div>
+	   </div>
+	<?php endif;?>
+	   <!-- end #gmaps-border -->
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.1&sensor=true"></script>
+   <script type="text/javascript">
+      //<![CDATA[
+      var map;
+      var geocoder;
 
-    <h1>
-        <?php echo $this->escape($this->item->title); ?>
-    </h1>
+      initialize();
 
-    <?php if ($this->item->subtitle == '') :
-    else : ?>
-    <h2>
-        <?php echo $this->escape($this->item->subtitle); ?>
-    </h2>
-    <?php endif; ?>
+      function initialize() {
+         geocoder = new google.maps.Geocoder();
+         geocoder.geocode({
+            'address': '<?php echo $this->escape($this->item->address); ?>',
+            'partialmatch': true}, geocodeResult);   
+      }
 
-    <p>
-        <?php JHtml::_('date', $this->item->created, JText::_('DATE_FORMAT_LC2')); ?>
-    </p>
+      function geocodeResult(results, status) {
+         
+         if (status == 'OK' && results.length > 0) {         
+            var latlng = new google.maps.LatLng(results[0].geometry.location.b,results[0].geometry.location.c);
+			var myOptions = {
+			   zoom: 15,
+			   center: results[0].geometry.location,
+			   mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			
+			map = new google.maps.Map(document.getElementById("gmaps-container"), myOptions);
+			   var marker = new google.maps.Marker({
+			   position: results[0].geometry.location,
+			   map: map,
+			   title:"<?php echo $this->escape($this->item->title); ?>"
+			});
 
-<div class="gallery gallery6 gallery-fade">
-			<ul class="thumbs">
-				<?php if ($custom_fields->image1): ?>
-					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image1;?>"><span>&nbsp;</span></a></li>
-				<?php endif;?>
-				<?php if ($custom_fields->image2): ?>
-					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image2;?>"><span>&nbsp;</span></a></li>
-				<?php endif;?>
-				<?php if ($custom_fields->image3): ?>
-					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image3;?>"><span>&nbsp;</span></a></li>
-				<?php endif;?>
-				<?php if ($custom_fields->image4): ?>
-					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image4;?>"><span>&nbsp;</span></a></li>
-				<?php endif;?>
-			</ul>
-			<div class="holder">
-				<ul>
-					<?php if ($custom_fields->image1): ?>
-					<li style="visibility: visible; opacity: 1;">
-						<img src="<?php echo $custom_fields->image1; ?>">
-						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
-						<div class="title">Image description 1</div>-->
-					</li>
-					<?php endif; ?>
-					<?php if ($custom_fields->image2): ?>
-					<li style="visibility: hidden; opacity: 0;">
-						<img src="<?php echo $custom_fields->image2; ?>">
-						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
-						<div class="title">Image description 1</div>-->
-					</li>
-					<?php endif; ?>
-					<?php if ($custom_fields->image3): ?>
-					<li style="visibility: hidden; opacity: 0;">
-						<img src="<?php echo $custom_fields->image3; ?>">
-						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
-						<div class="title">Image description 1</div>-->
-					</li>
-					<?php endif; ?>
-					<?php if ($custom_fields->image4): ?>
-					<li style="visibility: hidden; opacity: 0;">
-						<img src="<?php echo $custom_fields->image4; ?>">
-						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
-						<div class="title">Image description 1</div>-->
-					</li>
-					<?php endif; ?>
-					<?php if ($custom_fields->image5): ?>
-					<li style="visibility: hidden; opacity: 0;">
-						<img src="<?php echo $custom_fields->image5; ?>">
-						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
-						<div class="title">Image description 1</div>-->
-					</li>
-					<?php endif; ?>
-					<?php if ($custom_fields->image6): ?>
-					<li style="visibility: hidden; opacity: 0;">
-						<img src="<?php echo $custom_fields->image6; ?>">
-						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
-						<div class="title">Image description 1</div>-->
-					</li>
-					<?php endif; ?>
-					<?php if ($custom_fields->image7): ?>
-					<li style="visibility: hidden; opacity: 0;">
-						<img src="<?php echo $custom_fields->image7; ?>">
-						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
-						<div class="title">Image description 1</div>-->
-					</li>
-					<?php endif; ?>
-					<?php if ($custom_fields->image8): ?>
-					<li style="visibility: hidden; opacity: 0;">
-						<img src="<?php echo $custom_fields->image8; ?>">
-						<!--<img height="360" width="480" alt="image" src="http://juverman.narod.ru/slideGallery/Assets/images/img1.jpg">
-						<div class="title">Image description 1</div>-->
-					</li>
-					<?php endif; ?>
-				</ul>
-				<div class="control" style="top: -40px;">
-					<a class="start" href="#">play</a>
-					<a class="stop" href="#">pause</a>
-				</div>
-				<a class="prev" href="#" style="left: -50px;">prev</a>
-				<a class="next" href="#" style="right: -50px;">next</a>
-			</div>
-			<ul class="thumbs">
-				<?php if ($custom_fields->image5): ?>
-					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image5;?>"><span>&nbsp;</span></a></li>
-				<?php endif;?>
-				<?php if ($custom_fields->image6): ?>
-					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image6;?>"><span>&nbsp;</span></a></li>
-				<?php endif;?>
-				<?php if ($custom_fields->image7): ?>
-					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image7;?>"><span>&nbsp;</span></a></li>
-				<?php endif;?>
-				<?php if ($custom_fields->image8): ?>
-					<li><a href="javascript:;" class=""><img height="89" width="120" alt="image" src="<?php echo $custom_fields->image8;?>"><span>&nbsp;</span></a></li>
-				<?php endif;?>
-			</ul>
-		</div>	
-	
-<script src="http://juverman.narod.ru/slideGallery/Source/slideGallery.js"></script>
-<script>
-var thumns = $$(".thumbs li a");
-var gallery6 = new fadeGallery($$(".gallery6"), {
-	speed: 500,
-	autoplay: true,
-	duration: 2000,
-	onStart: function() {
-		thumns.removeClass("active");
-		thumns[this.current].addClass("active");
-	},
-	onPlay: function() { this.fireEvent("start");	}
-});
-thumns.each(function(el, i) {
-	el.addEvent("click", function() {
-		thumns.removeClass("active");
-		this.addClass("active");
-		gallery6.current = i;
-		gallery6.play(true);
-		return false;
-	});
-});
-var buttonPanel = gallery6.holder.getElement(".control");
-gallery6.holder.addEvent("mouseenter", function() {
-	buttonPanel.tween("top", 0);
-	gallery6.prev.tween("left", 10);
-	gallery6.next.tween("right", 10);
-});
-gallery6.holder.addEvent("mouseleave", function() {
-	buttonPanel.tween("top", -40);
-	gallery6.prev.tween("left", -50);
-	gallery6.next.tween("right", -50);
-});
-</script>
-	
-    <span>
-        <img src="<?php echo $custom_fields->image1; ?>">
-    </span>
+            var contentString = '<div id="content">'+
+            '<h3 id="firstHeading" class="firstHeading" style="padding-bottom: 15px;">'+marker.title+'</h3>'+
+            '<div id="bodyContent">'+
+            '<p><a target="_blank" href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q='+escape(results[0].formatted_address)+'&amp;ie=UTF8&amp;view=map">'+results[0].formatted_address+'</a>'+
+            '</p>'+
+            '</div>'+
+            '</div>';
+            //&amp;sll=29.67226,-94.873971
 
-    <?php echo $this->item->text; ?>
-	<pre><?php print_r($this->item);?></pre>
-	<pre><?php print_r($this->item->custom_fields);?></pre>
-	<pre><?php echo $this->params->get('image1');?></pre>
+            var infowindow = new google.maps.InfoWindow({
+               content: contentString,
+               maxWidth: 300
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+               infowindow.open(map,marker);
+            });
+
+            google.maps.event.trigger(marker, "click");
+
+         } else {
+            //alert("Geocode was not successful for the following reason: " + status);
+         }
+      }
+      //]]>
+	  <!-- single page slider -->
+							
+		if (jQuery('#product-slides').length) {
+			jQuery('#product-slides').cycle({
+				fx: 'fade',
+				timeout: 0,
+				speed: 700,
+				cleartypeNoBg: true
+			});
+			
+			$featured_slides = jQuery('#product-slides'),
+			$controllers = jQuery('#smallthumbs'),
+			controller_item = ('a.small-controller'),
+			right_arrow = 'a#right-arrow',
+			left_arrow = 'a#left-arrow',
+			movearrow = false;
+		};
+		
+		function move_arrow(activeObject){
+			var arrowPosition = activeObject.position().left + 18;
+			jQuery('span#active-arrow').animate({left: arrowPosition}, 400);
+		}
+		
+		$controllers.find(controller_item).click(function(){
+			
+			$controllers.find('a.active').removeClass('active');
+			
+			jQuery(this).addClass('active');
+			
+			if (movearrow) move_arrow(jQuery(this));
+			
+			var ordernum = jQuery(this).prevAll(controller_item).length;
+			
+			$featured_slides.cycle(ordernum);
+			
+			if (typeof interval != 'undefined') {
+				clearInterval(interval);
+				auto_rotate();
+			};
+			
+			return false;
+		})
+		
+		// Slider
+		jQuery(right_arrow + ',' + left_arrow).click(function(){
+					
+			if ( jQuery(this).attr('id') === 'right-arrow' )
+				var ordernum = $controllers.find('a.active').prevAll(controller_item).length + 1;
+			else
+				var ordernum = $controllers.find('a.active').prevAll(controller_item).length - 1;
+			
+			$controllers.find('a.active').removeClass('active');
+			
+			if ( !$controllers.find(controller_item+':eq('+ ordernum +')').length ) {
+				if ( jQuery(this).attr('id') === 'right-arrow' )
+					ordernum = 0;
+				else 
+					ordernum = $controllers.find(controller_item).length-1;
+			}
+			
+			$controllers.find(controller_item+':eq('+ ordernum +')').addClass('active');
+			
+			if (movearrow) move_arrow($controllers.find('a.active'));
+			
+			$featured_slides.cycle(ordernum);
+			
+			if (typeof interval != 'undefined') {
+				clearInterval(interval);
+				auto_rotate();
+			};
+			
+			return false;
+		});
+		
+					if (movearrow) {
+				function auto_rotate(){
+					interval = setInterval(function() {
+						jQuery(right_arrow).click();
+					}, 5000);
+				}
+				
+				auto_rotate();
+			}
+				
+	//]]>	
+   </script>
+    <?php //echo $this->item->text; ?>
+	<pre><?php //print_r($this->item);?></pre>
+	<pre><?php //print_r($this->item->custom_fields);?></pre>
+	<pre><?php //echo $this->params->get('image1');?></pre>
 
 </div>

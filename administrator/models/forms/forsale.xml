@@ -38,12 +38,14 @@
 
        <field
            name="snippet"
-           type="editor"
-           class="inputbox"
+           type="text"
+           class="textarea"
            label="COM_FORSALES_FIELD_SNIPPET_LABEL"
            description="COM_FORSALES_FIELD_SNIPPET_DESC"
            filter="ContactsHelper::filterText"
-           buttons="false" />
+           buttons="false"
+			size="10"
+		/>
 
        <field
            name="fulltext"
@@ -57,12 +59,11 @@
 		<field
            name="price"
            type="float"
-           class="inputbox"
            label="COM_FORSALES_FIELD_PRICE_LABEL"
            description="COM_FORSALES_FIELD_PRICE_DESC"
-           filter="ContactsHelper::filterText"
-           buttons="true" />
-		   
+           class="inputbox"
+           size="30" />
+   
 		<field
            name="bedrooms"
            type="integer"
@@ -116,7 +117,13 @@
 			<option value="0">JFALSE</option>
 			<option value="1">JTRUE</option>
 		</field>
-		   
+		<field
+           name="location"
+           type="text"
+           class="inputbox"
+           label="COM_FORSALES_FIELD_LOCATION_LABEL"
+           description="COM_FORSALES_FIELD_LOCATION_DESC"
+			/>
 		<field
            name="address"
            type="text"
@@ -471,73 +478,6 @@
                 />
 			<!-- End Images -->
 		</fieldset>
-<!--
-        <fieldset
-            name="jfields"
-            label="COM_FORSALES_CUSTOM_FIELDS"
-            >
-
-            <field
-			    name="imagespacer"
-                label="COM_FORSALES_IMAGE_LABEL"
-			    description="COM_FORSALES_IMAGE_DESC"
-			    type="spacer"
-			    />
-
-            
-            <field
-                name="image1_caption"
-                type="text"
-                label="COM_FORSALES_FIELD_IMAGE1_CAPTION_LABEL"
-                description="COM_FORSALES_FIELD_IMAGE1_CAPTION_DESC"
-                class="inputbox"
-                size="30"
-                />
-
-            <field
-                name="image1_credit"
-                type="text"
-                label="COM_FORSALES_FIELD_IMAGE1_CREDIT_LABEL"
-                description="COM_FORSALES_FIELD_IMAGE1_CREDIT_DESC"
-                class="inputbox"
-                size="30"
-                />
-
-		    <field
-			    name="link_label"
-			    type="spacer"
-                label="COM_FORSALES_LINK_LABEL"
-			    description="COM_FORSALES_LINK_DESC"
-                />
-
-            <field
-                name="link1"
-                type="url"
-                label="COM_FORSALES_FIELD_LINK1_LABEL"
-                description="COM_FORSALES_FIELD_LINK1_DESC"
-                class="inputbox"
-                size="30"
-                />
-
-            <field
-                name="link1_text"
-                type="text"
-                label="COM_FORSALES_FIELD_LINK1_NAME_LABEL"
-                description="COM_FORSALES_FIELD_LINK1_NAME_DESC"
-                class="inputbox"
-                size="30"
-            />
-			<field
-                name="link2_text"
-                type="text"
-                label="COM_FORSALES_FIELD_LINK2_NAME_LABEL"
-                description="COM_FORSALES_FIELD_LINK2_NAME_DESC"
-                class="inputbox"
-                size="30"
-            />
-
-
-        </fieldset>-->
 	</fields>
 
     <fields name="parameters">

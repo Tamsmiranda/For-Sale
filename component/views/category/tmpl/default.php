@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * @version     1.0.0
  * @package     com_forsales
@@ -16,12 +16,6 @@ defined('_JEXEC') or die;
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 ?>
 <div class="list<?php echo $this->pageclass_sfx;?>">
-<?php if (empty($this->items)) : ?>
-	<div class="span-14">
-		<h3>Resultado da Busca</h3>
-		<p>Não foram encontrados imóveis correspondentes a sua pesquisa.</p>
-	</div>
-<?php else : ?>
 <?php 
 
 $odd = false;
@@ -62,8 +56,7 @@ foreach ($this->items as $item) :
 			</div>
 		</div>
 <?php endforeach; ?>
-<?php endif; ?>
-</div>
+    </div>
 	<div id="pagination" class="span-14">
 	<?php echo $this->pagination->getPagesLinks(); ?>
 	</div>

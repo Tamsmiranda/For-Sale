@@ -16,11 +16,12 @@ jimport('joomla.application.component.view');
  * @subpackage	com_forsales
  * @since 1.5
  */
-class ForsalesViewForsales extends JView
+class ForsalesViewCategory extends JView
 {
 	protected $state;
 	protected $items;
 	protected $category;
+	protected $children;
 	protected $pagination;
 
 	function display($tpl = null)
@@ -33,14 +34,31 @@ class ForsalesViewForsales extends JView
 		$params		= $state->params;
 		$items		= $this->get('Items');
 		$category	= $this->get('Category');
+		$children	= $this->get('Children');
+		$parent		= $this->get('Parent');
 		$pagination = $this->get('Pagination');
-
+		//echo "<pre>";
+		//var_dump($this);
+		
+		//var_dump($this->get('Category'));
+		
+		//exit;
 		// Check for errors.
+				// Check for errors.
+				/*
 		if (count($errors = $this->get('Errors'))) {
 			JError::raiseError(500, implode("\n", $errors));
 			return false;
 		}
 
+		if ($category == false) {
+			return JError::raiseError(404, JText::_('JGLOBAL_CATEGORY_NOT_FOUND'));
+		}
+
+		if ($parent == false) {
+			return JError::raiseError(404, JText::_('JGLOBAL_CATEGORY_NOT_FOUND'));
+		}
+		*/
 		// Compute the forsale slugs and prepare introtext (runs forsales plugins).
 		for ($i = 0, $n = count($items); $i < $n; $i++)
 		{

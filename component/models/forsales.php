@@ -62,7 +62,8 @@ class ForsalesModelForsales extends JModelList
 
 		// List state information
 		//$value = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->getCfg('list_limit'));
-		$value = JRequest::getUInt('limit', $app->getCfg('list_limit', 0));
+		//$value = JRequest::getUInt('limit', $app->getCfg('list_limit', 0));
+		$value = 8;
 		$this->setState('list.limit', $value);
 
 		//$value = $app->getUserStateFromRequest($this->context.'.limitstart', 'limitstart', 0);
@@ -136,7 +137,7 @@ class ForsalesModelForsales extends JModelList
                 'a.state, a.publish_up, a.publish_down, ' .
                 'a.access, a.asset_id, a.version, a.language, a.ordering, ' .
                 'a.metakey, a.metadesc, a.metadata, ' .
-                'a.parameters, a.custom_fields'
+                'a.parameters, a.custom_fields, a.bathrooms, a.location'
             )
         );
         $query->from('#__forsales AS a');
@@ -181,7 +182,8 @@ class ForsalesModelForsales extends JModelList
         }
 
         // Filter by a single or group of categories.
-        $categoryId = $this->getState('filter.category_id');
+        //$categoryId = $this->getState('filter.category_id');
+		$categoryId = JRequest::getVar('id');
         if (is_numeric($categoryId)) {
             $query->where('a.catid = '.(int) $categoryId);
 
@@ -190,6 +192,32 @@ class ForsalesModelForsales extends JModelList
             $categoryId = implode(',', $categoryId);
             $query->where('a.catid IN ('.$categoryId.')');
         }
+		
+		/* Queries de busca */
+		$bathrooms = JRequest::getVar('bathrooms');
+		if (is_numeric($bathrooms)) {
+            $query->where('a.bathrooms = '.(int) $bathrooms);
+		}
+		$bedrooms = JRequest::getVar('bedrooms');
+		if (is_numeric($bedrooms)) {
+            $query->where('a.bedrooms = '.(int) $bedrooms);
+		}
+		$location = JRequest::getVar('location');
+		if (!empty($location)) {
+            $query->where("a.location LIKE '%" . $location . "%'" );
+		}
+		
+		//`location` LIKE '%Rio de Janeiro%'
+		
+		$min_price = JRequest::getVar('min_price');
+		$max_price = JRequest::getVar('max_price');
+		if (is_numeric($min_price) && is_numeric($max_price)) {
+			$query->where('a.price BETWEEN '.(float) $min_price . ' AND ' . (float) $max_price);
+		}
+		
+		//bedrooms
+		
+		/* ------------------ */
 
         // Filter by author
         $authorId = $this->getState('filter.author_id');
@@ -223,7 +251,6 @@ class ForsalesModelForsales extends JModelList
         $query->order($db->getEscaped($orderCol.' '.$orderDirn));
 
 //echo nl2br(str_replace('#__','foo_',$query));
-
         return $query;
     }
 
