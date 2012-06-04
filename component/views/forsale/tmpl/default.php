@@ -15,6 +15,15 @@ defined('_JEXEC') or die;
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 
 $custom_fields = json_decode($this->item->custom_fields);
+$images = array(
+	$custom_fields->image1,
+	$custom_fields->image2,
+	$custom_fields->image3,
+	$custom_fields->image4,
+	$custom_fields->image5,
+	$custom_fields->image6,
+	$custom_fields->image7,
+	$custom_fields->image8);
 
 /** uncomment out to determine column names */
 //echo '<pre>';var_dump($this->item);'</pre>';
@@ -27,59 +36,22 @@ $custom_fields = json_decode($this->item->custom_fields);
 /** uncomment out to display a specific custom field */
 //echo $custom_fields->image1;
 ?>
-
 <div class="list<?php echo $this->pageclass_sfx;?>">
-	<a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image002.jpg" rel="prettyPhoto" title="This is the description"><img src="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image002.jpg" width="60" height="60" alt="This is the title" /></a>
+	<?php if ($custom_fields->image1) : ?>
+	<a href="<?php echo $custom_fields->image1;?>" rel="prettyPhoto" title=""><img src="<?php echo $custom_fields->image1;?>" width="60" height="60" alt="" /></a>
+	<?php endif; ?>
 	<div id="product-slider">
       <div id="product-slides">
-                     <div class="item-slide">
-               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image002.jpg" rel="prettyPhoto[gallery]" title="360 º On The Park">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image002.jpg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
+		<?php foreach ($images as $image) : ?>
+            <div class="item-slide">
+				<?php if ($image) : ?>
+               <a href="<?php echo $image;?>" rel="prettyPhoto[gallery]" title="<?php echo $this->escape($this->item->title); ?>">
+                  <img src="<?php echo $image; ?>" alt="" />
                   <span class="overlay"></span>
                </a>
+			   <?php endif; ?>
             </div> <!-- .item-slide -->
-                     <div class="item-slide">
-               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image008.jpg" rel="prettyPhoto[gallery]" title="360 º On The Park">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image008.jpg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
-                  <span class="overlay"></span>
-               </a>
-            </div> <!-- .item-slide -->
-                     <div class="item-slide">
-               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-1.jpeg" rel="prettyPhoto[gallery]" title="360 º On The Park">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-1.jpeg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
-                  <span class="overlay"></span>
-               </a>
-            </div> <!-- .item-slide -->
-                     <div class="item-slide">
-               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown.jpeg" rel="prettyPhoto[gallery]" title="360 º On The Park">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown.jpeg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
-                  <span class="overlay"></span>
-               </a>
-            </div> <!-- .item-slide -->
-                     <div class="item-slide">
-               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-2.jpeg" rel="prettyPhoto[gallery]" title="360 º On The Park">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-2.jpeg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
-                  <span class="overlay"></span>
-               </a>
-            </div> <!-- .item-slide -->
-                     <div class="item-slide">
-               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-2.jpeg" rel="prettyPhoto[gallery]" title="360 º On The Park">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-2.jpeg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
-                  <span class="overlay"></span>
-               </a>
-            </div> <!-- .item-slide -->
-                     <div class="item-slide">
-               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-3.jpeg" rel="prettyPhoto[gallery]" title="360 º On The Park">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-3.jpeg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
-                  <span class="overlay"></span>
-               </a>
-            </div> <!-- .item-slide -->
-                     <div class="item-slide">
-               <a href="http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-4.jpeg" rel="prettyPhoto[gallery]" title="360 º On The Park">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-4.jpeg&amp;w=293&amp;h=293&amp;zc=1" alt="" />
-                  <span class="overlay"></span>
-               </a>
-            </div> <!-- .item-slide -->
+		<?php endforeach; ?>
                </div> <!-- #product-slides -->
          </div> <!-- #product-slider -->
 		 <!-- Product descrption -->
@@ -102,35 +74,15 @@ $custom_fields = json_decode($this->item->custom_fields);
 		    <div id="product-thumbs" class="clearfix">
       <div id="product-thumb-items">
          <div id="smallthumbs">
-                           <a href="#" class="small-controller active" rel="1">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image002.jpg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
+			<?php $ind = 1; ?>
+			<?php foreach ($images as $image) : ?>
+                <a href="#" class="small-controller active" rel="<?php echo $ind; ?>">
+                  <img src="<?php echo $image;?>" alt="" />
                   <span class="overlay"></span>
                </a>
-                           <a href="#" class="small-controller" rel="2">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/image008.jpg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
-                  <span class="overlay"></span>
-               </a>
-                           <a href="#" class="small-controller" rel="3">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-1.jpeg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
-                  <span class="overlay"></span>
-               </a>
-                           <a href="#" class="small-controller" rel="5">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-2.jpeg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
-                  <span class="overlay"></span>
-               </a>
-                           <a href="#" class="small-controller" rel="6">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-2.jpeg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
-                  <span class="overlay"></span>
-               </a>
-                           <a href="#" class="small-controller" rel="7">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-3.jpeg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
-                  <span class="overlay"></span>
-               </a>
-                           <a href="#" class="small-controller last" rel="8">
-                  <img src="http://www.ceciliaimoveis.com.br/wp/wp-content/themes/teste/timthumb.php?src=http://www.ceciliaimoveis.com.br/wp/wp-content/uploads/Unknown-4.jpeg&amp;w=49&amp;h=49&amp;zc=1" alt="" />
-                  <span class="overlay"></span>
-               </a>
-                     </div>
+			    <?php $ind+= 1;?>
+			 <?php endforeach; ?>
+            </div>
          <a href="#" id="left-arrow">Anterior</a>
          <a href="#" id="right-arrow">Próximo</a>
       </div> <!-- #product-thumb-items -->
