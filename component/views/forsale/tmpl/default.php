@@ -42,9 +42,6 @@ $timthumb = $base . JRoute::_('components/com_forsales/libraries/timthumb/timthu
 //echo $custom_fields->image1;
 ?>
 <div class="list<?php echo $this->pageclass_sfx;?>">
-	<?php if ($custom_fields->image1) : ?>
-	<a href="<?php echo $custom_fields->image1;?>" rel="prettyPhoto" title=""><img src="<?php echo $timthumb."?src=".$base.$custom_fields->image1."&w=60&h=60&zc=1";?>" width="60" height="60" alt="" /></a>
-	<?php endif; ?>
 	<div id="product-slider">
       <div id="product-slides">
 		<?php foreach ($images as $image) : ?>
