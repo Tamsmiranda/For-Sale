@@ -14,6 +14,12 @@ defined('_JEXEC') or die;
 //echo '<pre>';var_dump($this->user);'</pre>';
 
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
+
+// Url do TimThumb
+$base = juri::base();
+$timthumb = $base . JRoute::_('components/com_forsales/libraries/timthumb/timthumb.php', false);
+
+
 ?>
 <div class="list<?php echo $this->pageclass_sfx;?>">
 <?php if (empty($this->items)) : ?>
@@ -42,7 +48,7 @@ foreach ($this->items as $item) :
 		<div class="span-7">
 			<span>
 				<a href="<?php echo JRoute::_( 'index.php?option=com_forsales&view=forsale&id='.$item->id );?>">
-					<img src="<?php echo $custom_fields->image1; ?>">
+					<img src="<?php echo $timthumb."?src=".$base.$custom_fields->image1."&w=240&h=130&zc=1";?>" alt="" />
 				</a>
 			</span>
 			<h3 class="forsaletitle">
