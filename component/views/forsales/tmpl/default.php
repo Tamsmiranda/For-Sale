@@ -18,6 +18,7 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 // Url do TimThumb
 $base = juri::base();
 $timthumb = $base . JRoute::_('components/com_forsales/libraries/timthumb/timthumb.php', false);
+$imgDir = $base . JRoute::_('components/com_forsales/images/', true);
 
 
 ?>
@@ -46,11 +47,13 @@ foreach ($this->items as $item) :
     ?>
 
 		<div class="span-7">
-			<span>
+			<!-- -->
+			<div id="forsaleitem" style="background-image:url('components/com_forsales/images/overlay-240x130.png');height: 149px;width: 275px;">
 				<a href="<?php echo JRoute::_( 'index.php?option=com_forsales&view=forsale&id='.$item->id );?>">
-					<img src="<?php echo $timthumb."?src=".$base.$custom_fields->image1."&w=240&h=130&zc=1";?>" alt="" />
+					<img style="padding: 3px 0 0 17px;" src="<?php echo $timthumb."?src=".$base.$custom_fields->image1."&w=240&h=130&zc=1";?>" alt="" />
 				</a>
-			</span>
+			</div>
+			<!-- -->
 			<h3 class="forsaletitle">
 				<a href="<?php echo JRoute::_( 'index.php?option=com_forsales&view=forsale&id='.$item->id );?>">
 					<?php echo $this->escape($item->title); ?>
