@@ -38,8 +38,8 @@
 
        <field
            name="snippet"
-           type="text"
-           class="textarea"
+           type="editor"
+           class="inputbox"
            label="COM_FORSALES_FIELD_SNIPPET_LABEL"
            description="COM_FORSALES_FIELD_SNIPPET_DESC"
            filter="ContactsHelper::filterText"
