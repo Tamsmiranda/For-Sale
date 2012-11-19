@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  * @subpackage  com_weblinks
  * @since       1.6
  */
-class WeblinksHelper
+class ForsalesHelper
 {
 	/**
 	 * Configure the Linkbar.
@@ -24,23 +24,23 @@ class WeblinksHelper
 	 * @param	string	The name of the active view.
 	 * @since	1.6
 	 */
-	public static function addSubmenu($vName = 'weblinks')
+	public static function addSubmenu($vName = 'forsales')
 	{
 		JHtmlSidebar::addEntry(
 			JText::_('COM_WEBLINKS_SUBMENU_WEBLINKS'),
-			'index.php?option=com_weblinks&view=weblinks',
-			$vName == 'weblinks'
+			'index.php?option=com_forsales&view=forsales',
+			$vName == 'forsales'
 		);
 		JHtmlSidebar::addEntry(
 			JText::_('COM_WEBLINKS_SUBMENU_CATEGORIES'),
-			'index.php?option=com_categories&extension=com_weblinks',
+			'index.php?option=com_categories&extension=com_forsales',
 			$vName == 'categories'
 		);
 		if ($vName == 'categories')
 		{
 			JToolbarHelper::title(
-				JText::sprintf('COM_CATEGORIES_CATEGORIES_TITLE', JText::_('com_weblinks')),
-				'weblinks-categories');
+				JText::sprintf('COM_CATEGORIES_CATEGORIES_TITLE', JText::_('com_forsales')),
+				'forsales-categories');
 		}
 	}
 
@@ -57,14 +57,14 @@ class WeblinksHelper
 		$result	= new JObject;
 
 		if (empty($categoryId)) {
-			$assetName = 'com_weblinks';
+			$assetName = 'com_forsales';
 			$level = 'component';
 		} else {
-			$assetName = 'com_weblinks.category.'.(int) $categoryId;
+			$assetName = 'com_forsales.category.'.(int) $categoryId;
 			$level = 'category';
 		}
 
-		$actions = JAccess::getActions('com_weblinks', $level);
+		$actions = JAccess::getActions('com_forsales', $level);
 
 		foreach ($actions as $action) {
 			$result->set($action->name,	$user->authorise($action->name, $assetName));
