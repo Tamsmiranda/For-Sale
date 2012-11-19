@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  * @subpackage  com_weblinks
  * @since       1.0
  */
-class WeblinksViewCategory extends JViewLegacy
+class ForsalesViewCategory extends JViewLegacy
 {
 	public function display($tpl = null)
 	{

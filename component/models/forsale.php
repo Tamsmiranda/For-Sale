@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  * @subpackage  com_weblinks
  * @since       1.5
  */
-class WeblinksModelWeblink extends JModelItem
+class ForsalesModelForsale extends JModelItem
 {
 	/**
 	 * Model context string.
@@ -24,7 +24,7 @@ class WeblinksModelWeblink extends JModelItem
 	 * @access	protected
 	 * @var		string
 	 */
-	protected $_context = 'com_weblinks.weblink';
+	protected $_context = 'com_forsales.forsale';
 
 	/**
 	 * Method to auto-populate the model state.
@@ -40,7 +40,7 @@ class WeblinksModelWeblink extends JModelItem
 
 		// Load the object state.
 		$id	= $app->input->getInt('id');
-		$this->setState('weblink.id', $id);
+		$this->setState('forsale.id', $id);
 
 		// Load the parameters.
 		$this->setState('params', $params);
@@ -60,11 +60,11 @@ class WeblinksModelWeblink extends JModelItem
 			$this->_item = false;
 
 			if (empty($id)) {
-				$id = $this->getState('weblink.id');
+				$id = $this->getState('forsale.id');
 			}
 
 			// Get a level row instance.
-			$table = JTable::getInstance('Weblink', 'WeblinksTable');
+			$table = JTable::getInstance('Forsale', 'ForsalesTable');
 
 			// Attempt to load the row.
 			if ($table->load($id))
@@ -99,10 +99,10 @@ class WeblinksModelWeblink extends JModelItem
 	public function hit($id = null)
 	{
 		if (empty($id)) {
-			$id = $this->getState('weblink.id');
+			$id = $this->getState('forsale.id');
 		}
 
-		$weblink = $this->getTable('Weblink', 'WeblinksTable');
-		return $weblink->hit($id);
+		$forsale = $this->getTable('Forsale', 'ForsalesTable');
+		return $forsale->hit($id);
 	}
 }

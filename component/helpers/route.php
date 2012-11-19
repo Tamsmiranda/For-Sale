@@ -17,23 +17,23 @@ defined('_JEXEC') or die;
  * @subpackage  com_weblinks
  * @since       1.5
  */
-abstract class WeblinksHelperRoute
+abstract class ForsalesHelperRoute
 {
 	protected static $lookup;
 
 	/**
 	 * @param	int	The route of the weblink
 	 */
-	public static function getWeblinkRoute($id, $catid)
+	public static function getForsaleRoute($id, $catid)
 	{
 		$needles = array(
-			'weblink'  => array((int) $id)
+			'forsale'  => array((int) $id)
 		);
 
 		//Create the link
-		$link = 'index.php?option=com_weblinks&view=weblink&id='. $id;
+		$link = 'index.php?option=com_forsales&view=forsale&id='. $id;
 		if ($catid > 1) {
-			$categories = JCategories::getInstance('Weblinks');
+			$categories = JCategories::getInstance('Forsales');
 			$category = $categories->get($catid);
 
 			if($category) {
@@ -61,10 +61,10 @@ abstract class WeblinksHelperRoute
 	{
 		// Create the link.
 		if ($id) {
-			$link = 'index.php?option=com_weblinks&task=weblink.edit&w_id='. $id;
+			$link = 'index.php?option=com_forsales&task=forsale.edit&w_id='. $id;
 		}
 		else {
-			$link = 'index.php?option=com_weblinks&task=weblink.add&w_id=0';
+			$link = 'index.php?option=com_forsales&task=forsale.add&w_id=0';
 		}
 
 		if ($return) {
@@ -82,7 +82,7 @@ abstract class WeblinksHelperRoute
 		}
 		else {
 			$id = (int) $catid;
-			$category = JCategories::getInstance('Weblinks')->get($id);
+			$category = JCategories::getInstance('Forsales')->get($id);
 		}
 
 		if ($id < 1) {
@@ -98,7 +98,7 @@ abstract class WeblinksHelperRoute
 			}
 			else {
 				//Create the link
-				$link = 'index.php?option=com_weblinks&view=category&id='.$id;
+				$link = 'index.php?option=com_forsales&view=category&id='.$id;
 
 				if ($category) {
 					$catids = array_reverse($category->getPath());
@@ -129,7 +129,7 @@ abstract class WeblinksHelperRoute
 		if (self::$lookup === null) {
 			self::$lookup = array();
 
-			$component	= JComponentHelper::getComponent('com_weblinks');
+			$component	= JComponentHelper::getComponent('com_forsales');
 			$items		= $menus->getItems('component_id', $component->id);
 
 			if ($items) {

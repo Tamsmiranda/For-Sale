@@ -17,12 +17,12 @@ defined('_JEXEC') or die;
  * @subpackage  com_weblinks
  * @since       1.6
  */
-class WeblinksCategories extends JCategories
+class ForsalesCategories extends JCategories
 {
 	public function __construct($options = array())
 	{
-		$options['table'] = '#__weblinks';
-		$options['extension'] = 'com_weblinks';
+		$options['table'] = '#__forsales';
+		$options['extension'] = 'com_forsales';
 		parent::__construct($options);
 	}
 }

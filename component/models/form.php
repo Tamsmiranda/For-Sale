@@ -9,7 +9,7 @@
 
 defined('_JEXEC') or die;
 
-require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/weblink.php';
+require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/forsale.php';
 
 /**
  * Weblinks model.
@@ -18,7 +18,7 @@ require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/weblink.php';
  * @subpackage  com_weblinks
  * @since       1.6
  */
-class WeblinksModelForm extends WeblinksModelWeblink
+class ForsalesModelForm extends ForsalesModelForsale
 {
 	/**
 	 * Get the return URL.
@@ -44,12 +44,12 @@ class WeblinksModelForm extends WeblinksModelWeblink
 
 		// Load state from the request.
 		$pk = $app->input->getInt('w_id');
-		$this->setState('weblink.id', $pk);
+		$this->setState('forsale.id', $pk);
 		// Add compatibility variable for default naming conventions.
 		$this->setState('form.id', $pk);
 
 		$categoryId	= $app->input->getInt('catid');
-		$this->setState('weblink.catid', $categoryId);
+		$this->setState('forsale.catid', $categoryId);
 
 		$return = $app->input->get('return', null, 'base64');
 

@@ -14,7 +14,7 @@ defined('_JEXEC') or die;
  * @subpackage  com_weblinks
  * @since       1.5
  */
-class WeblinksControllerWeblink extends JControllerForm
+class ForsalesControllerForsale extends JControllerForm
 {
 	/**
 	 * @since	1.6
@@ -202,7 +202,7 @@ class WeblinksControllerWeblink extends JControllerForm
 		$task = $this->getTask();
 
 		if ($task == 'save') {
-			$this->setRedirect(JRoute::_('index.php?option=com_weblinks&view=category&id='.$validData['catid'], false));
+			$this->setRedirect(JRoute::_('index.php?option=com_forsales&view=category&id='.$validData['catid'], false));
 		}
 	}
 
@@ -239,7 +239,7 @@ class WeblinksControllerWeblink extends JControllerForm
 		$id = $this->input->getInt('id');
 
 		// Get the model, requiring published items
-		$modelLink	= $this->getModel('Weblink', '', array('ignore_request' => true));
+		$modelLink	= $this->getModel('Forsale', '', array('ignore_request' => true));
 		$modelLink->setState('filter.published', 1);
 
 		// Get the item
@@ -259,7 +259,7 @@ class WeblinksControllerWeblink extends JControllerForm
 		}
 
 		// Check whether category access level allows access.
-		$modelCat = $this->getModel('Category', 'WeblinksModel', array('ignore_request' => true));
+		$modelCat = $this->getModel('Category', 'ForsalesModel', array('ignore_request' => true));
 		$modelCat->setState('filter.published', 1);
 
 		// Get the category

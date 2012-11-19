@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  * @subpackage  com_weblinks
  * @since       1.5
  */
-class WeblinksViewForm extends JViewLegacy
+class ForsalesViewForm extends JViewLegacy
 {
 	protected $form;
 

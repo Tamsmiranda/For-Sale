@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  * @subpackage  com_weblinks
  * @since       1.5
  */
-class WeblinksModelCategory extends JModelList
+class ForsalesModelCategory extends JModelList
 {
 	/**
 	 * Category items data
@@ -109,7 +109,7 @@ class WeblinksModelCategory extends JModelList
 
 		// Select required fields from the categories.
 		$query->select($this->getState('list.select', 'a.*'));
-		$query->from($db->quoteName('#__weblinks').' AS a');
+		$query->from($db->quoteName('#__forsales').' AS a');
 		$query->where('a.access IN ('.$groups.')');
 
 		// Filter by category.
@@ -171,7 +171,7 @@ class WeblinksModelCategory extends JModelList
 	protected function populateState($ordering = null, $direction = null)
 	{
 		$app    = JFactory::getApplication();
-		$params = JComponentHelper::getParams('com_weblinks');
+		$params = JComponentHelper::getParams('com_forsales');
 
 		// List state information
 		$limit = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->getCfg('list_limit'), 'uint');
@@ -196,7 +196,7 @@ class WeblinksModelCategory extends JModelList
 		$this->setState('category.id', $id);
 
 		$user = JFactory::getUser();
-		if ((!$user->authorise('core.edit.state', 'com_weblinks')) &&  (!$user->authorise('core.edit', 'com_weblinks'))){
+		if ((!$user->authorise('core.edit.state', 'com_forsales')) &&  (!$user->authorise('core.edit', 'com_forsales'))){
 			// limit to published for people who can't edit or edit.state.
 			$this->setState('filter.state',	1);
 
@@ -234,7 +234,7 @@ class WeblinksModelCategory extends JModelList
 
 			$options = array();
 			$options['countItems'] = $params->get('show_cat_num_links_cat', 1) || $params->get('show_empty_categories', 0);
-			$categories = JCategories::getInstance('Weblinks', $options);
+			$categories = JCategories::getInstance('Forsales', $options);
 			$this->_item = $categories->get($this->getState('category.id', 'root'));
 			if(is_object($this->_item))
 			{

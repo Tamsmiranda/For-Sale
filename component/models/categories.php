@@ -16,21 +16,21 @@ defined('_JEXEC') or die;
  * @subpackage  com_weblinks
  * @since       1.6
  */
-class WeblinksModelCategories extends JModelLegacy
+class ForsalesModelCategories extends JModelLegacy
 {
 	/**
 	 * Model context string.
 	 *
 	 * @var		string
 	 */
-	public $_context = 'com_weblinks.categories';
+	public $_context = 'com_forsales.categories';
 
 	/**
 	 * The category context (allows other extensions to derived from this model).
 	 *
 	 * @var		string
 	 */
-	protected $_extension = 'com_weblinks';
+	protected $_extension = 'com_forsales';
 
 	private $_parent = null;
 
@@ -100,7 +100,7 @@ class WeblinksModelCategories extends JModelLegacy
 			}
 			$options = array();
 			$options['countItems'] = $params->get('show_cat_num_links', 1) || !$params->get('show_empty_categories_cat', 0);
-			$categories = JCategories::getInstance('Weblinks', $options);
+			$categories = JCategories::getInstance('Forsales', $options);
 			$this->_parent = $categories->get($this->getState('filter.parentId', 'root'));
 			if(is_object($this->_parent))
 			{
