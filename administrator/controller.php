@@ -10,13 +10,12 @@
 defined('_JEXEC') or die;
 
 /**
- * Weblinks Weblink Controller
+ * Forsales Forsale Controller
  *
  * @package     Joomla.Administrator
- * @subpackage  com_weblinks
- * @since       1.5
+ * @subpackage  com_forsales
  */
-class WeblinksController extends JControllerLegacy
+class ForsalesController extends JControllerLegacy
 {
 	/**
 	 * Method to display a view.
@@ -29,18 +28,18 @@ class WeblinksController extends JControllerLegacy
 	 */
 	public function display($cachable = false, $urlparams = false)
 	{
-		require_once JPATH_COMPONENT.'/helpers/weblinks.php';
+		require_once JPATH_COMPONENT.'/helpers/forsales.php';
 
-		$view   = $this->input->get('view', 'weblinks');
+		$view   = $this->input->get('view', 'forsales');
 		$layout = $this->input->get('layout', 'default');
 		$id     = $this->input->getInt('id');
 
 		// Check for edit form.
-		if ($view == 'weblink' && $layout == 'edit' && !$this->checkEditId('com_weblinks.edit.weblink', $id)) {
+		if ($view == 'forsale' && $layout == 'edit' && !$this->checkEditId('com_forsales.edit.weblink', $id)) {
 			// Somehow the person just went to the form - we don't allow that.
 			$this->setError(JText::sprintf('JLIB_APPLICATION_ERROR_UNHELD_ID', $id));
 			$this->setMessage($this->getError(), 'error');
-			$this->setRedirect(JRoute::_('index.php?option=com_weblinks&view=weblinks', false));
+			$this->setRedirect(JRoute::_('index.php?option=com_forsales&view=forsales', false));
 
 			return false;
 		}
