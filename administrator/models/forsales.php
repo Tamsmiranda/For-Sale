@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  * @subpackage  com_weblinks
  * @since       1.6
  */
-class WeblinksModelWeblinks extends JModelList
+class ForsalesModelForsales extends JModelList
 {
 	/**
 	 * Constructor.
@@ -133,7 +133,7 @@ class WeblinksModelWeblinks extends JModelList
 				'a.language, a.publish_up, a.publish_down'
 			)
 		);
-		$query->from($db->quoteName('#__weblinks').' AS a');
+		$query->from($db->quoteName('#__forsales').' AS a');
 
 		// Join over the language
 		$query->select('l.title AS language_title');

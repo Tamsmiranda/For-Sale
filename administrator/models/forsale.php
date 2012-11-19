@@ -16,13 +16,13 @@ defined('_JEXEC') or die;
  * @subpackage  com_weblinks
  * @since       1.5
  */
-class WeblinksModelWeblink extends JModelAdmin
+class ForsalesModelForsale extends JModelAdmin
 {
 	/**
 	 * @var		string	The prefix to use with controller messages.
 	 * @since	1.6
 	 */
-	protected $text_prefix = 'COM_WEBLINKS';
+	protected $text_prefix = 'COM_FORSALES';
 
 	/**
 	 * Method to test whether a record can be deleted.
@@ -40,7 +40,7 @@ class WeblinksModelWeblink extends JModelAdmin
 			$user = JFactory::getUser();
 
 			if ($record->catid) {
-				return $user->authorise('core.delete', 'com_weblinks.category.'.(int) $record->catid);
+				return $user->authorise('core.delete', 'com_forsales.category.'.(int) $record->catid);
 			}
 			else {
 				return parent::canDelete($record);
@@ -60,7 +60,7 @@ class WeblinksModelWeblink extends JModelAdmin
 		$user = JFactory::getUser();
 
 		if (!empty($record->catid)) {
-			return $user->authorise('core.edit.state', 'com_weblinks.category.'.(int) $record->catid);
+			return $user->authorise('core.edit.state', 'com_forsales.category.'.(int) $record->catid);
 		}
 		else {
 			return parent::canEditState($record);
@@ -75,7 +75,7 @@ class WeblinksModelWeblink extends JModelAdmin
 	 * @return	JTable	A database object
 	 * @since	1.6
 	 */
-	public function getTable($type = 'Weblink', $prefix = 'WeblinksTable', $config = array())
+	public function getTable($type = 'Forsale', $prefix = 'ForsalesTable', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
@@ -93,13 +93,13 @@ class WeblinksModelWeblink extends JModelAdmin
 		$app = JFactory::getApplication();
 
 		// Get the form.
-		$form = $this->loadForm('com_weblinks.weblink', 'weblink', array('control' => 'jform', 'load_data' => $loadData));
+		$form = $this->loadForm('com_forsales.forsale', 'forsale', array('control' => 'jform', 'load_data' => $loadData));
 		if (empty($form)) {
 			return false;
 		}
 
 		// Determine correct permissions to check.
-		if ($this->getState('weblink.id')) {
+		if ($this->getState('forsale.id')) {
 			// Existing record. Can only edit in selected categories.
 			$form->setFieldAttribute('catid', 'action', 'core.edit');
 		} else {
@@ -135,16 +135,16 @@ class WeblinksModelWeblink extends JModelAdmin
 	protected function loadFormData()
 	{
 		// Check the session for previously entered form data.
-		$data = JFactory::getApplication()->getUserState('com_weblinks.edit.weblink.data', array());
+		$data = JFactory::getApplication()->getUserState('com_forsales.edit.forsale.data', array());
 
 		if (empty($data)) {
 			$data = $this->getItem();
 
 			// Prime some default values.
-			if ($this->getState('weblink.id') == 0)
+			if ($this->getState('forsale.id') == 0)
 			{
 				$app = JFactory::getApplication();
-				$data->set('catid', $app->input->get('catid', $app->getUserState('com_weblinks.weblinks.filter.category_id'), 'int'));
+				$data->set('catid', $app->input->get('catid', $app->getUserState('com_forsales.forsales.filter.category_id'), 'int'));
 			}
 		}
 
@@ -204,7 +204,7 @@ class WeblinksModelWeblink extends JModelAdmin
 			// Set ordering to the last item if not set
 			if (empty($table->ordering)) {
 				$db = JFactory::getDbo();
-				$db->setQuery('SELECT MAX(ordering) FROM #__weblinks');
+				$db->setQuery('SELECT MAX(ordering) FROM #__forsales');
 				$max = $db->loadResult();
 
 				$table->ordering = $max + 1;

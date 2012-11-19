@@ -46,23 +46,23 @@ class JFormFieldOrdering extends JFormField
 		$attr .= $this->element['onchange'] ? ' onchange="'.(string) $this->element['onchange'].'"' : '';
 
 		// Get some field values from the form.
-		$weblinkId	= (int) $this->form->getValue('id');
+		$forsaleId	= (int) $this->form->getValue('id');
 		$categoryId	= (int) $this->form->getValue('catid');
 
 		// Build the query for the ordering list.
 		$query = 'SELECT ordering AS value, title AS text' .
-				' FROM #__weblinks' .
+				' FROM #__forsales' .
 				' WHERE catid = ' . (int) $categoryId .
 				' ORDER BY ordering';
 
 		// Create a read-only list (no name) with a hidden input to store the value.
 		if ((string) $this->element['readonly'] == 'true') {
-			$html[] = JHtml::_('list.ordering', '', $query, trim($attr), $this->value, $weblinkId ? 0 : 1);
+			$html[] = JHtml::_('list.ordering', '', $query, trim($attr), $this->value, $forsaleId ? 0 : 1);
 			$html[] = '<input type="hidden" name="'.$this->name.'" value="'.$this->value.'"/>';
 		}
 		// Create a regular list.
 		else {
-			$html[] = JHtml::_('list.ordering', $this->name, $query, trim($attr), $this->value, $weblinkId ? 0 : 1);
+			$html[] = JHtml::_('list.ordering', $this->name, $query, trim($attr), $this->value, $forsaleId ? 0 : 1);
 		}
 
 		return implode($html);
