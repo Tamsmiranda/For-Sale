@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  * @subpackage  com_weblinks
  * @since       1.6
  */
-class WeblinksControllerWeblink extends JControllerForm
+class ForsalesControllerForsale extends JControllerForm
 {
 	/**
 	 * Method override to check if you can add a new record.
@@ -95,10 +95,10 @@ class WeblinksControllerWeblink extends JControllerForm
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
 
 		// Set the model
-		$model = $this->getModel('Weblink', '', array());
+		$model = $this->getModel('Forsale', '', array());
 
 		// Preset the redirect
-		$this->setRedirect(JRoute::_('index.php?option=com_weblinks&view=weblinks' . $this->getRedirectToListAppend(), false));
+		$this->setRedirect(JRoute::_('index.php?option=com_forsales&view=weblinks' . $this->getRedirectToListAppend(), false));
 
 		return parent::batch($model);
 	}
