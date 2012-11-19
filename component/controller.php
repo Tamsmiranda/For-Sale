@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  * @subpackage  com_weblinks
  * @since       1.5
  */
-class WeblinksController extends JControllerLegacy
+class ForsalesController extends JControllerLegacy
 {
 	/**
 	 * Method to display a view.
@@ -53,7 +53,7 @@ class WeblinksController extends JControllerLegacy
 		);
 
 		// Check for edit form.
-		if ($vName == 'form' && !$this->checkEditId('com_weblinks.edit.weblink', $id)) {
+		if ($vName == 'form' && !$this->checkEditId('com_forsales.edit.forsale', $id)) {
 			// Somehow the person just went to the form - we don't allow that.
 			return JError::raiseError(403, JText::sprintf('JLIB_APPLICATION_ERROR_UNHELD_ID', $id));
 		}

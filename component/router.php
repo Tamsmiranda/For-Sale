@@ -16,14 +16,14 @@ defined('_JEXEC') or die;
  *
  * @return	array	The URL arguments to use to assemble the subsequent URL.
  */
-function WeblinksBuildRoute(&$query)
+function ForsalesBuildRoute(&$query)
 {
 	$segments = array();
 
 	// get a menu item based on Itemid or currently active
 	$app		= JFactory::getApplication();
 	$menu		= $app->getMenu();
-	$params		= JComponentHelper::getParams('com_weblinks');
+	$params		= JComponentHelper::getParams('com_forsales');
 	$advanced	= $params->get('sef_advanced_link', 0);
 
 	// we need a menu item.  Either the one specified in the query, or the current active one if none specified
@@ -59,9 +59,9 @@ function WeblinksBuildRoute(&$query)
 		return $segments;
 	}
 
-	if (isset($view) and ($view == 'category' or $view == 'weblink' )) {
+	if (isset($view) and ($view == 'category' or $view == 'forsale' )) {
 		if ($mId != (int) $query['id'] || $mView != $view) {
-			if ($view == 'weblink' && isset($query['catid'])) {
+			if ($view == 'forsale' && isset($query['catid'])) {
 				$catid = $query['catid'];
 			}
 			elseif (isset($query['id'])) {
@@ -69,7 +69,7 @@ function WeblinksBuildRoute(&$query)
 			}
 
 			$menuCatid = $mId;
-			$categories = JCategories::getInstance('Weblinks');
+			$categories = JCategories::getInstance('Forsales');
 			$category = $categories->get($catid);
 
 			if ($category) {
@@ -93,7 +93,7 @@ function WeblinksBuildRoute(&$query)
 				$segments = array_merge($segments, array_reverse($array));
 			}
 
-			if ($view == 'weblink') {
+			if ($view == 'forsale') {
 				if ($advanced) {
 					list($tmp, $id) = explode(':', $query['id'], 2);
 				}
@@ -131,7 +131,7 @@ function WeblinksBuildRoute(&$query)
  *
  * @return	array	The URL attributes to be used by the application.
  */
-function WeblinksParseRoute($segments)
+function ForsalesParseRoute($segments)
 {
 	$vars = array();
 
@@ -139,7 +139,7 @@ function WeblinksParseRoute($segments)
 	$app	= JFactory::getApplication();
 	$menu	= $app->getMenu();
 	$item	= $menu->getActive();
-	$params = JComponentHelper::getParams('com_weblinks');
+	$params = JComponentHelper::getParams('com_forsales');
 	$advanced = $params->get('sef_advanced_link', 0);
 
 	// Count route segments
@@ -155,7 +155,7 @@ function WeblinksParseRoute($segments)
 	// From the categories view, we can only jump to a category.
 	$id = (isset($item->query['id']) && $item->query['id'] > 1) ? $item->query['id'] : 'root';
 
-	$category = JCategories::getInstance('Weblinks')->get($id);
+	$category = JCategories::getInstance('Forsales')->get($id);
 
 	$categories = $category->getChildren();
 	$found = 0;
@@ -177,7 +177,7 @@ function WeblinksParseRoute($segments)
 		if ($found == 0) {
 			if ($advanced) {
 				$db = JFactory::getDBO();
-				$query = 'SELECT id FROM #__weblinks WHERE catid = '.$vars['id'].' AND alias = '.$db->Quote(str_replace(':', '-', $segment));
+				$query = 'SELECT id FROM #__forsales WHERE catid = '.$vars['id'].' AND alias = '.$db->Quote(str_replace(':', '-', $segment));
 				$db->setQuery($query);
 				$id = $db->loadResult();
 			}
@@ -186,7 +186,7 @@ function WeblinksParseRoute($segments)
 			}
 
 			$vars['id'] = $id;
-			$vars['view'] = 'weblink';
+			$vars['view'] = 'forsale';
 
 			break;
 		}
