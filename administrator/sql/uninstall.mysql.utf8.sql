@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS `#__weblinks`;
+DROP TABLE IF EXISTS `#__forsales`;

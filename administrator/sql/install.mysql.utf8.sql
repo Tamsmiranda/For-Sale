@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `#__weblinks` (
+CREATE TABLE IF NOT EXISTS `#__forsales` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `catid` int(11) NOT NULL DEFAULT '0',
   `sid` int(11) NOT NULL DEFAULT '0',
