@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_weblinks
+ * @subpackage  COM_FORSALES
  *
  * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
  * View class for a list of weblinks.
  *
  * @package     Joomla.Administrator
- * @subpackage  com_weblinks
+ * @subpackage  COM_FORSALES
  * @since       1.5
  */
 class ForsalesViewForsales extends JViewLegacy
@@ -61,7 +61,7 @@ class ForsalesViewForsales extends JViewLegacy
 		// Get the toolbar object instance
 		$bar = JToolBar::getInstance('toolbar');
 
-		JToolbarHelper::title(JText::_('COM_WEBLINKS_MANAGER_WEBLINKS'), 'forsales.png');
+		JToolbarHelper::title(JText::_('COM_FORSALES_MANAGER_WEBLINKS'), 'forsales.png');
 		if (count($user->getAuthorisedCategories('com_forsales', 'core.create')) > 0) {
 			JToolbarHelper::addNew('forsale.add');
 		}

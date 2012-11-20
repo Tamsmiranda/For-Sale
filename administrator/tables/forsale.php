@@ -101,7 +101,7 @@ class ForsalesTableForsale extends JTable
 		$table = JTable::getInstance('Forsale', 'ForsalesTable');
 		if ($table->load(array('alias' => $this->alias, 'catid' => $this->catid)) && ($table->id != $this->id || $this->id == 0))
 		{
-			$this->setError(JText::_('COM_WEBLINKS_ERROR_UNIQUE_ALIAS'));
+			$this->setError(JText::_('COM_FORSALES_ERROR_UNIQUE_ALIAS'));
 			return false;
 		}
 		// Attempt to store the user data.
@@ -116,13 +116,13 @@ class ForsalesTableForsale extends JTable
 	public function check()
 	{
 		if (JFilterInput::checkAttribute(array ('href', $this->url))) {
-			$this->setError(JText::_('COM_WEBLINKS_ERR_TABLES_PROVIDE_URL'));
+			$this->setError(JText::_('COM_FORSALES_ERR_TABLES_PROVIDE_URL'));
 			return false;
 		}
 
 		// check for valid name
 		if (trim($this->title) == '') {
-			$this->setError(JText::_('COM_WEBLINKS_ERR_TABLES_TITLE'));
+			$this->setError(JText::_('COM_FORSALES_ERR_TABLES_TITLE'));
 			return false;
 		}
 
@@ -132,7 +132,7 @@ class ForsalesTableForsale extends JTable
 
 		$xid = (int) $this->_db->loadResult();
 		if ($xid && $xid != (int) $this->id) {
-			$this->setError(JText::_('COM_WEBLINKS_ERR_TABLES_NAME'));
+			$this->setError(JText::_('COM_FORSALES_ERR_TABLES_NAME'));
 			return false;
 		}
 

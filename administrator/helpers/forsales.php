@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_weblinks
+ * @subpackage  COM_FORSALES
  *
  * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
  * Weblinks helper.
  *
  * @package     Joomla.Administrator
- * @subpackage  com_weblinks
+ * @subpackage  COM_FORSALES
  * @since       1.6
  */
 class ForsalesHelper
@@ -27,12 +27,12 @@ class ForsalesHelper
 	public static function addSubmenu($vName = 'forsales')
 	{
 		JHtmlSidebar::addEntry(
-			JText::_('COM_WEBLINKS_SUBMENU_WEBLINKS'),
+			JText::_('COM_FORSALES_SUBMENU_FORSALES'),
 			'index.php?option=com_forsales&view=forsales',
 			$vName == 'forsales'
 		);
 		JHtmlSidebar::addEntry(
-			JText::_('COM_WEBLINKS_SUBMENU_CATEGORIES'),
+			JText::_('COM_FORSALES_SUBMENU_CATEGORIES'),
 			'index.php?option=com_categories&extension=com_forsales',
 			$vName == 'categories'
 		);

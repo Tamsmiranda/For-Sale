@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_weblinks
+ * @subpackage  COM_FORSALES
  *
  * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -14,10 +14,10 @@ $published = $this->state->get('filter.state');
 <div class="modal hide fade" id="collapseModal">
 	<div class="modal-header">
 		<button type="button" role="presentation" class="close" data-dismiss="modal">x</button>
-		<h3><?php echo JText::_('COM_WEBLINKS_BATCH_OPTIONS');?></h3>
+		<h3><?php echo JText::_('COM_FORSALES_BATCH_OPTIONS');?></h3>
 	</div>
 	<div class="modal-body">
-		<p><?php echo JText::_('COM_WEBLINKS_BATCH_TIP'); ?></p>
+		<p><?php echo JText::_('COM_FORSALES_BATCH_TIP'); ?></p>
 		<div class="control-group">
 			<div class="controls">
 				<?php echo JHtml::_('batch.access');?>
@@ -31,7 +31,7 @@ $published = $this->state->get('filter.state');
 		<?php if ($published >= 0) : ?>
 		<div class="control-group">
 			<div class="controls">
-				<?php echo JHtml::_('batch.item', 'com_weblinks');?>
+				<?php echo JHtml::_('batch.item', 'COM_FORSALES');?>
 			</div>
 		</div>
 		<?php endif; ?>

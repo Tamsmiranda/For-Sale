@@ -18,9 +18,9 @@ JHtml::_('formbehavior.chosen', 'select');
 <script type="text/javascript">
 	Joomla.submitbutton = function(task)
 	{
-		if (task == 'weblink.cancel' || document.formvalidator.isValid(document.id('weblink-form'))) {
+		if (task == 'forsale.cancel' || document.formvalidator.isValid(document.id('forsale-form'))) {
 			<?php echo $this->form->getField('description')->save(); ?>
-			Joomla.submitform(task, document.getElementById('weblink-form'));
+			Joomla.submitform(task, document.getElementById('forsale-form'));
 		}
 		else {
 			alert('<?php echo $this->escape(JText::_('JGLOBAL_VALIDATION_FORM_FAILED'));?>');
@@ -28,14 +28,14 @@ JHtml::_('formbehavior.chosen', 'select');
 	}
 </script>
 
-<form action="<?php echo JRoute::_('index.php?option=com_weblinks&layout=edit&id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="weblink-form" class="form-validate">
+<form action="<?php echo JRoute::_('index.php?option=com_forsales&layout=edit&id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="forsale-form" class="form-validate">
 	<div class="row-fluid">
 		<!-- Begin Weblinks -->
 		<div class="span10 form-horizontal">
 
 	<fieldset>
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="#details" data-toggle="tab"><?php echo empty($this->item->id) ? JText::_('COM_WEBLINKS_NEW_WEBLINK') : JText::sprintf('COM_WEBLINKS_EDIT_WEBLINK', $this->item->id); ?></a></li>
+			<li class="active"><a href="#details" data-toggle="tab"><?php echo empty($this->item->id) ? JText::_('COM_FORSALES_NEW_FORSALE') : JText::sprintf('COM_FORSALES_EDIT_FORSALE', $this->item->id); ?></a></li>
 			<li><a href="#publishing" data-toggle="tab"><?php echo JText::_('JGLOBAL_FIELDSET_PUBLISHING');?></a></li>
 			<?php
 			$fieldSets = $this->form->getFieldsets('params');
@@ -72,7 +72,7 @@ JHtml::_('formbehavior.chosen', 'select');
 					<div class="control-label"><?php echo $this->form->getLabel('description'); ?></div>
 					<div class="controls"><?php echo $this->form->getInput('description'); ?></div>
 				</div>
-				<h4><?php echo JText::_('COM_WEBLINKS_FIELDSET_IMAGES');?></h4>
+				<h4><?php echo JText::_('COM_FORSALES_FIELDSET_IMAGES');?></h4>
 				<div class="control-group">
 					<div class="control-label">
 						<?php echo $this->form->getLabel('images'); ?>
