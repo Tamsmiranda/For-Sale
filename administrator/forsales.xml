@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0" method="upgrade">
-	<name>com_weblinks</name>
+	<name>com_forsales</name>
 	<author>Joomla! Project</author>
 	<creationDate>April 2006</creationDate>
 	<copyright>(C) 2005 - 2012 Open Source Matters. All rights reserved.
@@ -25,7 +25,7 @@
 
 	<files folder="site">
 		<filename>index.html</filename>
-		<filename>weblinks.php</filename>
+		<filename>forsales.php</filename>
 		<filename>controller.php</filename>
 		<filename>router.php</filename>
 		<filename>metadata.xml</filename>
@@ -38,23 +38,23 @@
 		<language tag="en-GB">language/en-GB.com_weblinks.ini</language>
 	</languages>
 	<administration>
-		<menu img="class:weblinks">com_weblinks</menu>
+		<menu img="class:forsales">com_forsales</menu>
 		<submenu>
 			<!--
 				Note that all & must be escaped to &amp; for the file to be valid
 				XML and be parsed by the installer
 			-->
-			<menu link="option=com_weblinks" view="links" img="class:weblinks"
-				alt="Weblinks/Links">com_weblinks_links</menu>
-			<menu link="option=com_categories&amp;extension=com_weblinks"
-				view="categories" img="class:weblinks-cat" alt="Weblinks/Categories">com_weblinks_categories</menu>
+			<menu link="option=com_forsales" view="links" img="class:forsales"
+				alt="Forsales/Links">com_forsales_links</menu>
+			<menu link="option=com_categories&amp;extension=com_forsales"
+				view="categories" img="class:forsalees-cat" alt="Forsales/Categories">com_forsales_categories</menu>
 		</submenu>
 		<files folder="admin">
 			<filename>access.xml</filename>
 			<filename>config.xml</filename>
 			<filename>controller.php</filename>
 			<filename>index.html</filename>
-			<filename>weblinks.php</filename>
+			<filename>forsales.php</filename>
 			<folder>controllers</folder>
 			<folder>helpers</folder>
 			<folder>models</folder>
@@ -63,8 +63,8 @@
 			<folder>views</folder>
 		</files>
 		<languages folder="admin">
-			<language tag="en-GB">language/en-GB.com_weblinks.ini</language>
-			<language tag="en-GB">language/en-GB.com_weblinks.sys.ini</language>
+			<language tag="en-GB">language/en-GB.com_forsales.ini</language>
+			<language tag="en-GB">language/en-GB.com_forsales.sys.ini</language>
 		</languages>
 	</administration>
 </extension>
