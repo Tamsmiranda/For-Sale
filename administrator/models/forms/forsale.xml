@@ -13,7 +13,7 @@
 			size="40" label="JFIELD_ALIAS_LABEL"
 			description="COM_WEBLINKS_FIELD_ALIAS_DESC" />
 
-		<field name="catid" type="categoryedit" extension="com_weblinks"
+		<field name="catid" type="categoryedit" extension="com_forsales"
 			label="JCATEGORY" description="COM_WEBLINKS_FIELD_CATEGORY_DESC"
 			class="inputbox"
 		>
@@ -111,9 +111,9 @@
 			class="inputbox" format="%Y-%m-%d %H:%M:%S" size="22"
 			filter="user_utc" />
 
-		<field name="version" type="text" class="readonly"
+		<!--<field name="version" type="text" class="readonly"
 			label="COM_WEBLINKS_FIELD_VERSION_LABEL" size="6" description="COM_WEBLINKS_FIELD_VERSION_DESC"
-			readonly="true" filter="unset" />
+			readonly="true" filter="unset" /> -->
 
 
 		<field name="metakey" type="textarea"
