@@ -18,12 +18,12 @@ $user		= JFactory::getUser();
 $userId		= $user->get('id');
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));
-$canOrder	= $user->authorise('core.edit.state', 'com_weblinks.category');
+$canOrder	= $user->authorise('core.edit.state', 'com_forsales.category');
 $saveOrder	= $listOrder == 'a.ordering';
 if ($saveOrder)
 {
-	$saveOrderingUrl = 'index.php?option=com_weblinks&task=weblinks.saveOrderAjax&tmpl=component';
-	JHtml::_('sortablelist.sortable', 'weblinkList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
+	$saveOrderingUrl = 'index.php?option=com_forsales&task=forsales.saveOrderAjax&tmpl=component';
+	JHtml::_('sortablelist.sortable', 'forsaleList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 $sortFields = $this->getSortFields();
 ?>
@@ -40,7 +40,7 @@ $sortFields = $this->getSortFields();
 		Joomla.tableOrdering(order, dirn, '');
 	}
 </script>
-<form action="<?php echo JRoute::_('index.php?option=com_weblinks&view=weblinks'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_forsales&view=forsales'); ?>" method="post" name="adminForm" id="adminForm">
 <?php if(!empty( $this->sidebar)): ?>
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>
@@ -79,7 +79,7 @@ $sortFields = $this->getSortFields();
 			</div>
 		</div>
 		<div class="clearfix"> </div>
-		<table class="table table-striped" id="weblinkList">
+		<table class="table table-striped" id="forsaleList">
 			<thead>
 				<tr>
 					<th width="1%" class="nowrap center hidden-phone">
@@ -118,11 +118,11 @@ $sortFields = $this->getSortFields();
 			<tbody>
 			<?php foreach ($this->items as $i => $item) :
 				$ordering   = ($listOrder == 'a.ordering');
-				$item->cat_link	= JRoute::_('index.php?option=com_categories&extension=com_weblinks&task=edit&type=other&cid[]='. $item->catid);
-				$canCreate  = $user->authorise('core.create',     'com_weblinks.category.' . $item->catid);
-				$canEdit    = $user->authorise('core.edit',       'com_weblinks.category.' . $item->catid);
+				$item->cat_link	= JRoute::_('index.php?option=com_categories&extension=com_forsales&task=edit&type=other&cid[]='. $item->catid);
+				$canCreate  = $user->authorise('core.create',     'com_forsales.category.' . $item->catid);
+				$canEdit    = $user->authorise('core.edit',       'com_forsales.category.' . $item->catid);
 				$canCheckin = $user->authorise('core.manage',     'com_checkin') || $item->checked_out == $user->get('id') || $item->checked_out == 0;
-				$canChange  = $user->authorise('core.edit.state', 'com_weblinks.category.' . $item->catid) && $canCheckin;
+				$canChange  = $user->authorise('core.edit.state', 'com_forsales.category.' . $item->catid) && $canCheckin;
 				?>
 				<tr class="row<?php echo $i % 2; ?>" sortable-group-id="<?php echo $item->catid?>">
 					<td class="order nowrap center hidden-phone">
@@ -147,14 +147,14 @@ $sortFields = $this->getSortFields();
 						<?php echo JHtml::_('grid.id', $i, $item->id); ?>
 					</td>
 					<td class="center hidden-phone">
-						<?php echo JHtml::_('jgrid.published', $item->state, $i, 'weblinks.', $canChange, 'cb', $item->publish_up, $item->publish_down); ?>
+						<?php echo JHtml::_('jgrid.published', $item->state, $i, 'forsales.', $canChange, 'cb', $item->publish_up, $item->publish_down); ?>
 					</td>
 					<td class="nowrap">
 						<?php if ($item->checked_out) : ?>
-							<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'weblinks.', $canCheckin); ?>
+							<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'forsales.', $canCheckin); ?>
 						<?php endif; ?>
 						<?php if ($canEdit) : ?>
-							<a href="<?php echo JRoute::_('index.php?option=com_weblinks&task=weblink.edit&id='.(int) $item->id); ?>">
+							<a href="<?php echo JRoute::_('index.php?option=com_forsales&task=forsale.edit&id='.(int) $item->id); ?>">
 								<?php echo $this->escape($item->title); ?></a>
 						<?php else : ?>
 								<?php echo $this->escape($item->title); ?>
