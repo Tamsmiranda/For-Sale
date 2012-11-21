@@ -61,7 +61,7 @@ class ForsalesViewForsales extends JViewLegacy
 		// Get the toolbar object instance
 		$bar = JToolBar::getInstance('toolbar');
 
-		JToolbarHelper::title(JText::_('COM_FORSALES_MANAGER_WEBLINKS'), 'forsales.png');
+		JToolbarHelper::title(JText::_('COM_FORSALES_MANAGER_FORSALES'), 'forsales.png');
 		if (count($user->getAuthorisedCategories('com_forsales', 'core.create')) > 0) {
 			JToolbarHelper::addNew('forsale.add');
 		}
@@ -95,7 +95,7 @@ class ForsalesViewForsales extends JViewLegacy
 			JToolbarHelper::preferences('com_forsales');
 		}
 
-		JToolbarHelper::help('JHELP_COMPONENTS_WEBLINKS_LINKS');
+		JToolbarHelper::help('JHELP_COMPONENTS_FORSALES_LINKS');
 
 		JHtmlSidebar::setAction('index.php?option=com_forsales&view=forsales');
 
