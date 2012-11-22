@@ -57,8 +57,12 @@ JHtml::_('formbehavior.chosen', 'select');
 					<div class="controls"><?php echo $this->form->getInput('title'); ?></div>
 				</div>
 				<div class="control-group">
-					<div class="control-label"><?php echo $this->form->getLabel('url'); ?></div>
-					<div class="controls"><?php echo $this->form->getInput('url'); ?></div>
+					<div class="control-label"><?php echo $this->form->getLabel('subtitle'); ?></div>
+					<div class="controls"><?php echo $this->form->getInput('subtitle'); ?></div>
+				</div>
+				<div class="control-group">
+					<div class="control-label"><?php echo $this->form->getLabel('snipet'); ?></div>
+					<div class="controls"><?php echo $this->form->getInput('snipet'); ?></div>
 				</div>
 				<div class="control-group">
 					<div class="control-label"><?php echo $this->form->getLabel('catid'); ?></div>
@@ -67,6 +71,34 @@ JHtml::_('formbehavior.chosen', 'select');
 				<div class="control-group">
 					<div class="control-label"><?php echo $this->form->getLabel('ordering'); ?></div>
 					<div class="controls"><?php echo $this->form->getInput('ordering'); ?></div>
+				</div>
+				<div class="control-group">
+					<div class="control-label"><?php echo $this->form->getLabel('price'); ?></div>
+					<div class="controls"><?php echo $this->form->getInput('price'); ?></div>
+				</div>
+				<div class="control-group">
+					<div class="control-label"><?php echo $this->form->getLabel('bedroom'); ?></div>
+					<div class="controls"><?php echo $this->form->getInput('bedroom'); ?></div>
+				</div>
+				<div class="control-group">
+					<div class="control-label"><?php echo $this->form->getLabel('bathroom'); ?></div>
+					<div class="controls"><?php echo $this->form->getInput('bathroom'); ?></div>
+				</div>
+				<div class="control-group">
+					<div class="control-label"><?php echo $this->form->getLabel('parking_spot'); ?></div>
+					<div class="controls"><?php echo $this->form->getInput('parking_spot'); ?></div>
+				</div>
+				<div class="control-group">
+					<div class="control-label"><?php echo $this->form->getLabel('area'); ?></div>
+					<div class="controls"><?php echo $this->form->getInput('area'); ?></div>
+				</div>
+				<div class="control-group">
+					<div class="control-label"><?php echo $this->form->getLabel('use_google_maps'); ?></div>
+					<div class="controls"><?php echo $this->form->getInput('use_google_maps'); ?></div>
+				</div>
+				<div class="control-group">
+					<div class="control-label"><?php echo $this->form->getLabel('address'); ?></div>
+					<div class="controls"><?php echo $this->form->getInput('address'); ?></div>
 				</div>
 				<div class="control-group">
 					<div class="control-label"><?php echo $this->form->getLabel('description'); ?></div>
