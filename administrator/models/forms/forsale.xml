@@ -19,10 +19,52 @@
 		>
 		</field>
 
-		<field name="url" type="url" class="inputbox"
-			filter="url"
-			size="40" label="COM_FORSALES_FIELD_URL_LABEL"
-			description="COM_FORSALES_FIELD_URL_DESC" required="true" />
+		<field name="subtitle" type="text" class="inputbox"
+			size="40" label="COM_FORSALES_SUBTITLE_LABEL"
+			description="COM_FORSALES_FIELD_SUBTITLE_DESC" required="true" />
+
+		<field name="snipet" type="editor" buttons="true" hide="pagebreak,readmore"
+			class="inputbox"
+			filter="JComponentHelper::filterText"
+			label="COM_FORSALES_SNIPET_LABEL" description="COM_FORSALES_FIELD_SNIPET_DESC" />
+
+		<field name="price" type="text"
+			label="COM_FORSALES_PRICE_LABEL" description="COM_FORSALES_FIELD_PRICE_DESC"
+			class="inputbox"
+		>
+
+		<field name="bedroom" type="text"
+			label="COM_FORSALES_BEDROOM_LABEL" description="COM_FORSALES_FIELD_BEDROOM_DESC"
+			class="inputbox"
+		>
+
+		<field name="bathroom" type="text"
+			label="COM_FORSALES_BATHROOM_LABEL" description="COM_FORSALES_FIELD_BATHROOM_DESC"
+			class="inputbox"
+		>
+
+		<field name="parking_spot" type="text"
+			label="COM_FORSALES_PARKING_SPOT_LABEL" description="COM_FORSALES_FIELD_PARKING_SPOT_DESC"
+			class="inputbox"
+		>
+
+		<field name="area" type="text"
+			label="COM_FORSALES_AREA_LABEL" description="COM_FORSALES_FIELD_AREA_DESC"
+			class="inputbox"
+		>
+
+		<field name="use_google_maps" type="radio"
+			default="1"
+			label="COM_FORSALES_USE_GOOGLE_MAPS_LABEL"
+			description="COM_FORSALES_FIELD_USE_GOOGLE_MAPS_DESC"
+		>
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+
+		<field name="address" type="text" class="inputbox"
+			size="40" label="COM_FORSALES_ADDRESS_LABEL"
+			description="COM_FORSALES_FIELD_ADDRESS_DESC" required="true" />
 
 		<field name="description" type="editor" buttons="true" hide="pagebreak,readmore"
 			class="inputbox"
